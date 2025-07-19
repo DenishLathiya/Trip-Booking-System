@@ -36,7 +36,7 @@ const App = () => {
   return (
     <>
       <RouterProvider router={router}/>
-      <ScrollToTop color='white' smooth style={{backgroundColor:'#EF4444', display:'flex', alignItems:'center', justifyContent:'center'}}/>
+     <ScrollToTop color='white' smooth style={{backgroundColor:'#60B5FF', display:'flex', alignItems:'center', justifyContent:'center'}}/>
     </>
   )
 }

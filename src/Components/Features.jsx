@@ -45,7 +45,7 @@ const Features = () => {
         </div>
         <div className='grid gap-8 sm:grid-cols-2 lg:grid-cols-3'>
             {features.map((feature, index)=> (
-                <div key={index} className='transition-all bg-red-50 border rounded-lg hover:shadow-lg'>
+                <div key={index} className='transition-all bg-blue-100 border rounded-lg hover:shadow-lg'>
                     <div className='p-6 text-center'>
                         {feature.icon}
                         <h3 className='text-xl font-bold mb-2'>{feature.title}</h3>

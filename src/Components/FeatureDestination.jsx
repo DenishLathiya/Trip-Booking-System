@@ -4,8 +4,8 @@ import Paris from "../assets/Paris.jpg";
 import Tokyo from "../assets/Tokyo.jpg";
 import India from "../assets/India.jpg";
 import Venice from "../assets/Venice.jpg";
-import next from "../assets/next.png";
-import back from "../assets/back.png";
+import NEXT2 from "../assets/next.svg";
+import back from "../assets/back.svg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -13,7 +13,7 @@ import { Clock, Star } from "lucide-react";
 import "../Components/Css/reactSlick.css";
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-  <img src={next} alt="prevArrow" {...props} />
+  <img src={NEXT2} alt="prevArrow" {...props} />
 );
 const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
   <img src={back} alt="prevArrow" {...props} />
@@ -106,7 +106,7 @@ const FeatureDestination = () => {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-3 font-serif">
             Featured Destinations
           </h2>
-          <hr className="text-red-500 w-[200px] bg-red-500 mx-auto h-1 mb-10" />
+          <hr className="text-red-500 w-[200px] bg-[#60B5FF] mx-auto h-1 mb-10" />
           <div className="slider-container">
             <Slider {...settings}>
               {destinationJson.map((destination) => (
@@ -132,7 +132,7 @@ const FeatureDestination = () => {
                           {destination.name}
                         </h3>
                         <p className="flex gap-1 items-center">
-                          <Star width={20} fill="red" />
+                          <Star width={20} fill="#FFD700" />
                           {destination.star}
                         </p>
                         <p className="text-gray-600 mb-4 mt-2">
@@ -140,7 +140,7 @@ const FeatureDestination = () => {
                           {destination.name}
                         </p>
                         <div className="flex gap-4">
-                          <button className="px-3 py-2 bg-red-500 rounded-md text-white">
+                          <button className="px-3 py-2 bg-[#60B5FF] rounded-md text-white">
                             ${destination.price}
                           </button>
                           <button className="px-3 py-2 bg-black rounded-md text-white">

@@ -59,7 +59,7 @@ const Tours = () => {
         <h1 className="text-3xl lg:text-4xl font-serif mb-3 font-semibold text-center">
           Top Destination
         </h1>
-        <hr className="text-red-500 w-[200px] bg-red-500 mx-auto h-1 mb-10" />
+        <hr className="text-red-500 w-[200px] bg-[#60B5FF] mx-auto h-1 mb-10" />
         <div className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-4 place-items-center">
           {destinationJson.map((destination) => (
             <div>
@@ -84,14 +84,14 @@ const Tours = () => {
                       {destination.name}
                     </h3>
                     <p className="flex gap-1 items-center">
-                      <Star width={20} fill="red" />
+                      <Star width={20} fill="#FFD700" />
                       {destination.star}
                     </p>
                     <p className="text-gray-600 mb-4 mt-2">
                       Experience the beauty and culture of {destination.name}
                     </p>
                     <div className="flex gap-4">
-                      <button className="px-3 py-2 bg-red-500 rounded-md text-white">
+                      <button className="px-3 py-2 bg-[#60B5FF] rounded-md text-white">
                         ${destination.price}
                       </button>
                       <button className="px-3 py-2 bg-black rounded-md text-white">

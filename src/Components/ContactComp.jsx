@@ -1,5 +1,5 @@
 import React from 'react'
-import contactImg from '../assets/ContactImg.jpg'
+import contactImg from '../assets/ContactImg.png'
 
 const Contact = () => {
     return (
@@ -44,7 +44,7 @@ const Contact = () => {
                             required
                         />
                     </div>
-                    <button type='submit' className='w-full bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 '>Send Message</button>
+                    <button type='submit' className='w-full bg-[#60B5FF] text-white py-2 px-4 rounded-md hover:bg-[#3498DB] focus:outline-none focus:ring-2 focus:ring-red-500 '>Send Message</button>
                 </form>
             </div>
         </div>

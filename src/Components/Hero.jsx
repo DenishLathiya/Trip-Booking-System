@@ -38,9 +38,13 @@ const Hero = () => {
                     Explore breathtaking destinations, create unforgettable
                     memories and embark on the journey of a lifetime.
                   </p>
-                  <button className="bg-red-500 px-3 py-2 text-white rounded-md font-semibold">
-                    Start Exploring
-                  </button>
+                  <button
+  style={{ backgroundColor: '#60B5FF' }}
+  className="px-3 py-2 text-white rounded-md font-semibold"
+>
+  Start Exploring
+</button>
+
                 </div>
               </div>
             </div>
@@ -58,7 +62,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-black opacity-60"></div>
             <div className="relative max-w-7xl mx-auto">
               <div className="flex h-[650px] justify-center items-center lg:pt-0 pt-20">
-                <div className="flex flex-col space-y-8 justify-center items-cen  ter text-center px-5 md:px-0">
+                <div className="flex flex-col space-y-8 justify-center items-center text-center px-5 md:px-0">
                   <h1 className="text-white font-bold text-4xl lg:text-6xl">
                     Discover Your Next Adventure
                   </h1>
@@ -66,9 +70,12 @@ const Hero = () => {
                     Explore breathtaking destinations, create unforgettable
                     memories and embark on the journey of a lifetime.
                   </p>
-                  <button className="bg-red-500 px-3 py-2 text-white rounded-md font-semibold">
-                    Start Exploring
-                  </button>
+                 <button
+  style={{ backgroundColor: '#60B5FF' }}
+  className="px-3 py-2 text-white rounded-md font-semibold"
+>
+  Start Exploring
+</button>
                 </div>
               </div>
             </div>
@@ -94,9 +101,9 @@ const Hero = () => {
                     Explore breathtaking destinations, create unforgettable
                     memories and embark on the journey of a lifetime.
                   </p>
-                  <button className="bg-red-500 px-3 py-2 text-white rounded-md font-semibold">
-                    Start Exploring
-                  </button>
+                <button style={{ backgroundColor: '#60B5FF' }} className="px-3 py-2 text-white rounded-md font-semibold">
+  Start Exploring
+</button>
                 </div>
               </div>
             </div>
@@ -107,4 +114,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;  
+export default Hero;
