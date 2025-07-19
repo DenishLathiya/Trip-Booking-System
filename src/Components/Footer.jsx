@@ -56,7 +56,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm">
-              <li>123 Travel Street, City, Country</li>
+              <li>/surat, Country</li>
               <li>Phone: +91 7567236791</li>
               <li>Email: info@tourbuddy.com</li>
             </ul> 
