@@ -58,7 +58,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>123 Travel Street, City, Country</li>
               <li>Phone: +91 7567236791</li>
-              <li>Email: info@tripbuddy.com</li>
+              <li>Email: info@tourbuddy.com</li>
             </ul>
           </div>
           <div>
