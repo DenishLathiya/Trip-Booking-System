@@ -56,7 +56,7 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm">
-              <li>Timba , Bhavnagar, Gujarat</li>
+              <li>bela , gariadhar, Gujarat</li>
               <li>Phone: +91 234563456</li>
               <li>Email: denish@tourbuddy.com</li>
             </ul>
