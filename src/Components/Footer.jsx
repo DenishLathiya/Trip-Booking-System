@@ -56,9 +56,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm">
-              <li>bela , gariadhar, Gujarat</li>
-              <li>Phone: +91 9566454657</li>
-              <li>Email: lathiya@tourbuddy.com</li>
+              <li>Only Usage address is required.</li>
+              <li>Phone: +91 7567236791</li>
+              <li>Email: dlathiya@tourbuddy.com</li>
             </ul>
           </div>
           <div>
