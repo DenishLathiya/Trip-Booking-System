@@ -51,7 +51,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>bela , gariadhar, Gujarat</li>
               <li>Phone: +81 234563456</li>
-              <li>Email: vasu@tourbuddy.com</li>
+              <li>Email: denish@tourbuddy.com</li>
             </ul>
           </div>
           <div>
@@ -65,12 +65,13 @@ const Footer = () => {
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center justify-end text-sm">
           <p>
-            &copy; {new Date().getFullYear()} denish lathiya all right reserved.
+            &copy; {new Date().getFullYear()} triputi sangam all right reserved.
           </p>
         </div>
       </div>
     </footer>
   );
+  s;
 };
 
 export default Footer;
