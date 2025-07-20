@@ -4,14 +4,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer
-      className="bg-gray-800 text-white py-10"
-      style={{
-        // backgroundImage: `url(${footer})`,
-        backgroundPosition: "bottom",
-        backgroundSize: "cover",
-      }}
-    >
+   <footer className='bg-black text-white py-10'>
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
