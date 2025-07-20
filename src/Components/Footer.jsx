@@ -56,9 +56,13 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm">
-              <li>Only address is usage is working on that</li>
-              <li>Phone: +81 9998873889</li>
-              <li>Email: dlathiya@tourbuddy.com</li>
+              <li>bela , gariadhar, Gujarat</li>
+<<<<<<<<< Temporary merge branch 1
+              <li>Phone: +91 9566454657</li>
+=========
+              <li>Phone: +81 234563456</li>
+>>>>>>>>> Temporary merge branch 2
+              <li>Email: denish@tourbuddy.com</li>
             </ul>
           </div>
           <div>
