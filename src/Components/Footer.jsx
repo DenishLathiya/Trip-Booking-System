@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center justify-end text-sm">
           <p>
-            &copy; {new Date().getFullYear()} TravelEase. All rights reserved
+            &copy; {new Date().getFullYear()} denish lathiya all right reserved.
           </p>
         </div>
       </div>
