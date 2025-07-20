@@ -5,110 +5,57 @@ import "slick-carousel/slick/slick-theme.css";
 import banner1 from "../assets/Hero1.jpg";
 import banner2 from "../assets/Hero3.jpg";
 import banner3 from "../assets/Hero4.jpg";
-import { Search } from "lucide-react";
 
 const Hero = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: false,
   };
-  return (
-    <div className="slider-container -mt-12 overflow-hidden">
-      <Slider {...settings}>
-        <div className="">
-          <div
-            className="h-[650px] lg:h-[800px] relative"
-            style={{
-              backgroundImage: `url(${banner1})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <div className="absolute inset-0 bg-black opacity-60"></div>
-            <div className="relative max-w-7xl mx-auto">
-              <div className="flex h-[650px] justify-center items-center lg:pt-0 pt-20">
-                <div className="flex flex-col space-y-8 justify-center items-center text-center px-5 md:px-0">
-                  <h1 className="text-white font-bold text-4xl lg:text-6xl">
-                    Discover Your Next Adventure
-                  </h1>
-                  <p className="text-white lg:text-lg lg:w-[700px]">
-                    Explore breathtaking destinations, create unforgettable
-                    memories and embark on the journey of a lifetime.
-                  </p>
-                  <button
-  style={{ backgroundColor: '#60B5FF' }}
-  className="px-3 py-2 text-white rounded-md font-semibold"
->
-  Start Exploring
-</button>
 
+  const slides = [banner1, banner2, banner3];
+
+  return (
+    <div className="slider-container overflow-hidden -mt-12">
+      <Slider {...settings}>
+        {slides.map((banner, index) => (
+          <div key={index}>
+            <div
+              className="h-[650px] lg:h-[800px] relative"
+              style={{
+                backgroundImage: `url(${banner})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="absolute inset-0 bg-black opacity-60"></div>
+              <div className="relative max-w-7xl mx-auto">
+                <div className="flex h-[650px] justify-center items-center lg:pt-0 pt-20">
+                  <div className="flex flex-col space-y-8 justify-center items-center text-center px-5 md:px-0">
+                    <h1 className="text-white font-bold text-4xl lg:text-6xl">
+                      Discover Your Next Adventure
+                    </h1>
+                    <p className="text-white lg:text-lg lg:w-[700px]">
+                      Explore breathtaking destinations, create unforgettable
+                      memories and embark on the journey of a lifetime.
+                    </p>
+                    <button
+                      style={{ backgroundColor: "#60B5FF" }}
+                      className="px-3 py-2 text-white rounded-md font-semibold"
+                    >
+                      Start Exploring
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="">
-          <div
-            className="h-[650px] lg:h-[800px] relative"
-            style={{
-              backgroundImage: `url(${banner2})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <div className="absolute inset-0 bg-black opacity-60"></div>
-            <div className="relative max-w-7xl mx-auto">
-              <div className="flex h-[650px] justify-center items-center lg:pt-0 pt-20">
-                <div className="flex flex-col space-y-8 justify-center items-center text-center px-5 md:px-0">
-                  <h1 className="text-white font-bold text-4xl lg:text-6xl">
-                    Discover Your Next Adventure
-                  </h1>
-                  <p className="text-white lg:text-lg lg:w-[700px]">
-                    Explore breathtaking destinations, create unforgettable
-                    memories and embark on the journey of a lifetime.
-                  </p>
-                 <button
-  style={{ backgroundColor: '#60B5FF' }}
-  className="px-3 py-2 text-white rounded-md font-semibold"
->
-  Start Exploring
-</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="">
-          <div
-            className="h-[650px] lg:h-[800px] relative"
-            style={{
-              backgroundImage: `url(${banner3})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <div className="absolute inset-0 bg-black opacity-60"></div>
-            <div className="relative max-w-7xl mx-auto">
-              <div className="flex h-[650px] justify-center items-center lg:pt-0 pt-20">
-                <div className="flex flex-col space-y-8 justify-center items-center text-center px-5 md:px-0">
-                  <h1 className="text-white font-bold text-4xl lg:text-6xl">
-                    Discover Your Next Adventure
-                  </h1>
-                  <p className="text-white lg:text-lg lg:w-[700px]">
-                    Explore breathtaking destinations, create unforgettable
-                    memories and embark on the journey of a lifetime.
-                  </p>
-                <button style={{ backgroundColor: '#60B5FF' }} className="px-3 py-2 text-white rounded-md font-semibold">
-  Start Exploring
-</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </Slider>
     </div>
   );
