@@ -71,9 +71,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center justify-end text-sm">
-          <p>
-            &copy; {new Date().getFullYear()} denish lathiya all right reserved.
-          </p>
+          <p>&copy; {new Date().getFullYear()} 3 idiots all right reserved.</p>
         </div>
       </div>
     </footer>
