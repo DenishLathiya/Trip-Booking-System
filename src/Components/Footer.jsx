@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-   <footer className='bg-black text-white py-10'>
+    <footer className="bg-black text-white py-10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
@@ -21,7 +21,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <a href="#" className="hover:text-[#60B5FF]">
-                  new Home added
+                  Home
                 </a>
               </li>
               <li>
@@ -49,9 +49,9 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm">
-              <li>bela , gariadhar, Gujarat</li>
-              <li>Phone: +81 234563456</li>
-              <li>Email: denish@tourbuddy.com</li>
+              <li>242 AR Mall Surat</li>
+              <li>Phone: +91 7567236791</li>
+              <li>Email: info@tourbuddy.com</li>
             </ul>
           </div>
           <div>
@@ -65,7 +65,7 @@ const Footer = () => {
         </div>
         <div className="mt-8 pt-8 border-t border-gray-700 text-center justify-end text-sm">
           <p>
-            &copy; {new Date().getFullYear()} triputi sangam all right reserved.
+            &copy; {new Date().getFullYear()} Trip Buddy all right reserved.
           </p>
         </div>
       </div>
