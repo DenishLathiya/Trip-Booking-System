@@ -59,7 +59,7 @@ const FeatureDestination = () => {
       duration: "3 Days – 2 Nights",
       groupSize: "2–18",
       location: "Main Street, Brooklyn, NY",
-      price: 199,
+      price: 29999,
       image:
         "https://themegavias.com/wp/travivu/wp-content/uploads/2024/11/listing-10-600x500.jpg",
     },
@@ -73,7 +73,7 @@ const FeatureDestination = () => {
       duration: "2 Days – 1 Night",
       groupSize: "1–12",
       location: "Island Beach, Miami, FL",
-      price: 259,
+      price: 25999,
       image:
         "https://themegavias.com/wp/travivu/wp-content/uploads/2024/11/listing-9-600x500.jpg",
     },
@@ -87,7 +87,7 @@ const FeatureDestination = () => {
       duration: "4 Days – 3 Nights",
       groupSize: "4–20",
       location: "Aspen Mountains, CO",
-      price: 349,
+      price: 34999,
       image:
         "https://themegavias.com/wp/travivu/wp-content/uploads/2024/11/listing-8-600x500.jpg",
     },
@@ -101,7 +101,7 @@ const FeatureDestination = () => {
       duration: "1 Day Trip",
       groupSize: "5–25",
       location: "Dubai Desert, UAE",
-      price: 179,
+      price: 35299,
       image:
         "https://themegavias.com/wp/travivu/wp-content/uploads/2024/11/listing-7-600x500.jpg",
     },
@@ -115,7 +115,7 @@ const FeatureDestination = () => {
       duration: "2 Days – 1 Night",
       groupSize: "3–15",
       location: "Napa Valley, CA",
-      price: 149,
+      price: 14999,
       image:
         "https://themegavias.com/wp/travivu/wp-content/uploads/2024/11/listing-6-600x500.jpg",
     },
@@ -129,7 +129,7 @@ const FeatureDestination = () => {
       duration: "3 Days – 2 Nights",
       groupSize: "2–10",
       location: "Lakewood, Michigan",
-      price: 189,
+      price: 18999,
       image:
         "https://themegavias.com/wp/travivu/wp-content/uploads/2024/11/listing-5-600x500.jpg",
     },
@@ -176,7 +176,7 @@ const FeatureDestination = () => {
                         </p>
                         <div className="flex justify-between items-center pt-2">
                           <p className="text-2xl font-bold text-gray-900">
-                            ${destination.price}
+                            Rs.{destination.price}
                           </p>
                         </div>
                       </div>
@@ -186,7 +186,7 @@ const FeatureDestination = () => {
                           Book now
                         </button>
                         <button className="px-5 py-3 bg-black rounded-lg text-white text-base font-semibold">
-                          Learn More
+                          Details
                         </button>
                       </div>
                     </div>
