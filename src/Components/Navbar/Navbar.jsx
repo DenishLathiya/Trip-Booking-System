@@ -10,7 +10,7 @@ const Navbar = () => {
   };
   return (
     <header className="sticky mx-auto top-0 transition-all py-6 bg-transparent z-10">
-      <div className="bg-transparent/75 px-4 fixed w-full z-50 top-0 py-2">
+      <div className="bg-[#121f4d]/85 px-4 fixed w-full z-50 top-0 py-2">
         <div className="max-w-7xl mx-auto py-2 px-5 flex bg-transparent justify-between items-center">
           <Link to="/">
             <h1 className="text-2xl text-white font-bold">
@@ -22,22 +22,32 @@ const Navbar = () => {
             <nav className="hidden md:flex gap-7">
               <ul className="flex items-center font-semibold text-white text-xl gap-7">
                 <Link to="/">
-                  <li className="hover:text-[#60B5FF]">Home</li>
+                  <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
+                    Home
+                  </li>
                 </Link>
                 <Link to="/tours">
-                  <li className="hover:text-[#60B5FF]">Tours</li>
+                  <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
+                    Tours
+                  </li>
                 </Link>
                 <Link to="/gallery">
-                  <li className="hover:text-[#60B5FF]">Gallery</li>
+                  <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
+                    Gallery
+                  </li>
                 </Link>
                 <Link to="/about">
-                  <li className="hover:text-[#60B5FF]">About Us</li>
+                  <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
+                    About Us
+                  </li>
                 </Link>
                 <Link to="/contact">
-                  <li className="hover:text-[#60B5FF]">Contact</li>
+                  <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
+                    Contact
+                  </li>
                 </Link>
               </ul>
-              <button className="bg-[#60B5FF] text-white px-6 py-2 rounded-md font-semibold ">
+              <button className="bg-[#4e9de3] hover:bg-[#60B5FB] text-white px-6 py-2 rounded-md font-semibold ">
                 Login In
               </button>
             </nav>
