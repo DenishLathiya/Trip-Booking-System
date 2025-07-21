@@ -37,7 +37,7 @@ const Navbar = () => {
                   <li className="hover:text-[#60B5FF]">Contact</li>
                 </Link>
               </ul>
-              <button className="bg-[#60B5FF] text-white px-4 py-1 rounded-md font-semibold">
+              <button className="bg-[#60B5FF] text-white px-6 py-2 rounded-md font-semibold ">
                 Login In
               </button>
             </nav>
