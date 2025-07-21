@@ -46,6 +46,11 @@ const Navbar = () => {
                     Contact
                   </li>
                 </Link>
+                <Link to="/booking">
+                  <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
+                    Booking
+                  </li>
+                </Link>
               </ul>
               <button className="bg-[#4e9de3] hover:bg-[#60B5FB] text-white px-6 py-2 rounded-md font-semibold ">
                 Login In
