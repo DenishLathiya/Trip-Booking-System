@@ -44,7 +44,7 @@ const About = () => {
             </p>
           </div>
           <div className="flex-1">
-            <div className="bg-blue-100 p-6 rounded-lg shadow-md">
+            <div className="bg-blue-100 hover:shadow-lg p-6 rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row items-start mb-4 ">
                 <img src={trip} alt="" className="w-20" />
                 <div>
@@ -58,7 +58,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-blue-100 p-6 my-4 rounded-lg shadow-md">
+            <div className="bg-blue-100 hover:shadow-lg p-6 my-4 rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row items-start mb-4">
                 <img src={price} alt="" className="w-20" />
                 <div>
@@ -72,7 +72,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            <div className="bg-blue-100 p-6 rounded-lg shadow-md">
+            <div className="bg-blue-100 hover:shadow-lg p-6 rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row items-start mb-4">
                 <img src={time} alt="" className="w-20" />
                 <div>
