@@ -3,8 +3,8 @@ import login from "../assets/login.svg"
 
 const Login = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white flex flex-col md:flex-row items-center gap-10 p-10 rounded-2xl shadow-xl max-w-4xl w-full">
+    <div className="min-h-screen flex items-center justify-center ">
+      <div className="bg-white flex flex-col md:flex-row items-center gap-10 p-10 rounded-2xl max-w-4xl w-full">
         <div className="w-full md:w-1/2">
           <img
             src={login}

@@ -1,11 +1,5 @@
 import React from "react";
 import TopBanner from "../Components/TopBanner";
-import Bali from "../assets/Bali.jpg";
-import Paris from "../assets/Paris.jpg";
-import Tokyo from "../assets/Tokyo.jpg";
-import India from "../assets/India.jpg";
-import Venice from "../assets/Venice.jpg";
-import { Clock, Star } from "lucide-react";
 
 const Tours = () => {
   const destinationJson = [
@@ -141,7 +135,7 @@ const Tours = () => {
                     <button className="px-5 py-3 bg-[#60B5FF] rounded-lg text-white text-base font-semibold">
                       Book now
                     </button>
-                    <button className="px-5 py-3 bg-black rounded-lg text-white text-base font-semibold">
+                    <button className="px-5 py-3 bg-[#121f4d]  rounded-lg text-white text-base font-semibold">
                       Learn More
                     </button>
                   </div>
