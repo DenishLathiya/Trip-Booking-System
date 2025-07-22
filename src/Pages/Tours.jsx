@@ -141,7 +141,7 @@ const Tours = () => {
                     <button className="px-5 py-3 bg-[#60B5FF] rounded-lg text-white text-base font-semibold">
                       Book now
                     </button>
-                    <button className="px-5 py-3 bg-[#121f4d]  rounded-lg text-white text-base font-semibold">
+                    <button className=/*"px-5 py-3 bg-[#121f4d]  rounded-lg text-white text-base font-semibold bg-bg-[#121f4d] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 ..."*/ "px-5 py-3 rounded-lg text-white text-base font-semibold bg-gradient-to-r from-[#121f4d] to-[#1a2a6c] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:from-indigo-5g00 hover:to-indigo-800">
                       Learn More
                     </button>
                   </div>
