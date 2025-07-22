@@ -49,17 +49,27 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-2 text-sm">
-              <li>242 AR Mall Surat</li>
-              <li>Phone: +91 7567236791</li>
-              <li>Email: info@tourbuddy.com</li>
+              <li>Address: 242 AR Mall Surat</li>
+              <a href="tel:+917567236791">
+                <li>Phone: +91 7567236791</li>
+              </a>
+              <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">
+                <li>Email: info@tourbuddy.com</li>
+              </a>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <div className="flex space-x-4 ">
-              <FaFacebook className="hover:text-[#60B5FF]" />
-              <FaInstagram className="hover:text-[#60B5FF]" />
-              <FaTwitter className="hover:text-[#60B5FF]" />
+              <a href="https://www.facebook.com/">
+                <FaFacebook className="hover:text-[#60B5FF]" />
+              </a>
+              <a href="https://www.instagram.com/">
+                <FaInstagram className="hover:text-[#60B5FF]" />
+              </a>
+              <a href="https://x.com/">
+                <FaTwitter className="hover:text-[#60B5FF]" />
+              </a>
             </div>
           </div>
         </div>

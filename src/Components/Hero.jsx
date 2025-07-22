@@ -46,7 +46,7 @@ const Hero = () => {
                     </p>
                     <button
                       style={{ backgroundColor: "#60B5FF" }}
-                      className="px-3 py-2 text-white rounded-md font-semibold"
+                      className="px-3 py-2 text-white rounded-md font-semibold transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
                     >
                       Start Exploring
                     </button>
