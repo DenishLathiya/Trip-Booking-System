@@ -8,6 +8,7 @@ import About from './Pages/About'
 import Contact from './Pages/Contact'
 import Footer from './Components/Footer'
 import ScrollToTop from "react-scroll-to-top";
+import Login from './Pages/login'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path:'/contact',
     element: <><Navbar/><Contact/><Footer/></>
+  },
+  {
+    path:'/login',
+    element: <><Login/></>
   },
 ])
 
