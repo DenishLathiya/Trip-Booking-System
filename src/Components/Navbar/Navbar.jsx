@@ -26,35 +26,40 @@ const Navbar = () => {
                     Home
                   </li>
                 </Link>
-                <Link to="/tours">
-                  <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
-                    Tours
-                  </li>
-                </Link>
-                <Link to="/gallery">
-                  <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
-                    Gallery
-                  </li>
-                </Link>
+
                 <Link to="/about">
                   <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
                     About Us
                   </li>
                 </Link>
+
+                <Link to="/tours">
+                  <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
+                    Tours
+                  </li>
+                </Link>
+
+                <Link to="/booking">
+                  <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
+                    Bookings
+                  </li>
+                </Link>
+
+                <Link to="/gallery">
+                  <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
+                    Gallery
+                  </li>
+                </Link>
+
                 <Link to="/contact">
                   <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
                     Contact
                   </li>
                 </Link>
-                <Link to="/booking">
-                  <li className="border-b-2 border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF] transition-colors duration-300">
-                    Booking
-                  </li>
-                </Link>
               </ul>
               <Link to="/login">
                 <button className="bg-[#4e9de3] hover:bg-[#60B5FB] text-white px-6 py-2 rounded-md font-semibold  transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
-                  Login In{" "}
+                  Login{" "}
                 </button>
               </Link>
             </nav>
