@@ -7,7 +7,7 @@ import Gallery from "./Pages/Gallery";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Footer from "./Components/Footer";
-import Booking from "./Pages/booking";
+import Booking from "./Pages/Booking";
 import ScrollToTop from "react-scroll-to-top";
 import Login from "./Pages/login";
 import SignupForm from "./Pages/Signup";
