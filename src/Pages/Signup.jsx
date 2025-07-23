@@ -157,7 +157,7 @@ const SignupForm = () => {
             type="submit"
             className="w-full bg-gradient-to-r from-indigo-500 to-blue-500 text-white py-2.5 rounded-xl font-semibold shadow-md hover:from-indigo-600 hover:to-blue-600 hover:shadow-lg transition duration-300 text-lg tracking-wide"
           >
-            Sign Up
+            Register
           </button>
         </form>
 
@@ -167,7 +167,7 @@ const SignupForm = () => {
             href="/login"
             className="text-indigo-500 hover:underline font-medium transition-colors duration-200"
           >
-            Log In
+            Login
           </a>
         </p>
       </div>
