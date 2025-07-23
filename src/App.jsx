@@ -9,7 +9,8 @@ import Contact from "./Pages/Contact";
 import Footer from "./Components/Footer";
 import Booking from "./Pages/booking";
 import ScrollToTop from "react-scroll-to-top";
-import Login from './Pages/login'
+import Login from "./Pages/login";
+import SignupForm from "./Pages/Signup";
 
 const router = createBrowserRouter([
   {
@@ -80,7 +81,15 @@ const router = createBrowserRouter([
       </>
     ),
   },
-])
+  {
+    path: "/Signup",
+    element: (
+      <>
+        <SignupForm />
+      </>
+    ),
+  },
+]);
 
 const App = () => {
   return (
