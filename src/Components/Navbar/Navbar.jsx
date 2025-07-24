@@ -116,9 +116,9 @@ const Navbar = () => {
                 {navLinks.map((link) => (
                   <Link to={link.path} key={link.name}>
                     <li
-                      className={`border-b-2 transition-colors duration-300 ${
+                      className={`pb-2 border-b-2 transition-colors duration-300 ${
                         location.pathname === link.path
-                          ? "text-[#60B5FF]  border-[#60B5FF]"
+                          ? "text-[#60B5FF] border-[#60B5FF]"
                           : "border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF]"
                       }`}
                     >
