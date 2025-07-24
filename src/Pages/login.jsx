@@ -98,7 +98,7 @@ const LoginModal = ({ onClose }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-slate-400 bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white w-[750px] h-[430px] flex rounded-lg overflow-hidden shadow-xl relative">
         {/* Left - Login Form */}
         <div className="w-1/2 p-10 flex flex-col justify-center">
@@ -140,7 +140,7 @@ const LoginModal = ({ onClose }) => {
 
             <button
               type="submit"
-              className="w-full bg-[#0c1a2d] text-white text-lg font-medium py-3 rounded-lg hover:bg-[#1a2b47] transition"
+              className="w-full bg-[#60B5FB] text-white text-lg font-medium py-3 rounded-lg hover:bg-[#3fa6fa] transition"
             >
               Sign in
             </button>
@@ -169,7 +169,7 @@ const LoginModal = ({ onClose }) => {
               className="absolute top-4 right-4 bg-[#0c1a2d] text-white rounded-full w-8 h-8 flex items-center justify-center text-xl z-10"
               onClick={onClose}
             >
-              ×
+              ⨯
             </button>
           </Link>
         </div>
