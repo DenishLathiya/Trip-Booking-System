@@ -111,14 +111,14 @@ const Navbar = () => {
           </Link>
 
           <div className="flex items-center gap-5">
-            <nav className="hidden md:flex gap-7">
-              <ul className="flex items-center font-semibold text-white text-xl gap-7">
+            <nav className="hidden md:flex gap-7 ">
+              <ul className="flex items-center font-semibold text-white text-xl gap-7 ">
                 {navLinks.map((link) => (
                   <Link to={link.path} key={link.name}>
                     <li
                       className={`border-b-2 transition-colors duration-300 ${
                         location.pathname === link.path
-                          ? "text-[#60B5FF] border-[#60B5FF]"
+                          ? "text-[#60B5FF]  border-[#60B5FF]"
                           : "border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF]"
                       }`}
                     >
