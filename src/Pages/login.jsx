@@ -39,26 +39,25 @@ const Login = () => {
               />
             </div>
 
-              <div className="text-sm text-gray-600">
-                Don't have an account?
-                <a
-                  href="/Signup"
-                  className="text-blue-600 hover:underline font-medium ml-1"
-                >
-                  Sign Up
-                </a>
-              </div>
+            <div className="text-sm text-gray-600">
+              Don't have an account?
+              <a
+                href="/Signup"
+                className="text-blue-600 hover:underline font-medium ml-1"
+              >
+                Sign Up
+              </a>
+            </div>
 
-              <div className="flex gap-4">
-                <button
-                  type="submit"
-                  className="flex-1 bg-[#60B5FF] hover:bg-[#3498DB] text-white py-2 rounded-lg font-semibold transition duration-200"
-                >
-                  Login
-                </button>
-              </div>
-            </form>
-          </div>
+            <div className="flex gap-4">
+              <button
+                type="submit"
+                className="flex-1 bg-[#60B5FF] hover:bg-[#3498DB] text-white py-2 rounded-lg font-semibold transition duration-200"
+              >
+                Login
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
