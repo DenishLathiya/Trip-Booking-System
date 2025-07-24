@@ -10,6 +10,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Clock, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import "../Components/Css/reactSlick.css";
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
@@ -182,9 +183,11 @@ const FeatureDestination = () => {
                       </div>
 
                       <div className="flex gap-5">
+                         <Link to="/booking">
                         <button className="px-5 py-3 bg-[#60B5FF] rounded-lg text-white text-base font-semibold bg-gradient-to-r from-bg-[#60B5FF] to-bg-[#60B5FF] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                           Book now
                         </button>
+                         </Link>
                         <button className="px-5 py-3 rounded-lg text-white text-base font-semibold bg-gradient-to-r from-[#121f4d] to-[#1a2a6c] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:from-indigo-5g00 hover:to-indigo-800">
                           Details
                         </button>

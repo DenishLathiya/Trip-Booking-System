@@ -41,7 +41,7 @@ const SignupForm = () => {
         <div className="flex justify-center mb-6">
           <div className="bg-indigo-100 rounded-full p-4 shadow-lg">
             <svg width="40" height="40" fill="none" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="12" fill="#6366f1" />
+              <circle cx="12" cy="12" r="12" fill="#60B5FF" />
               <text
                 x="12"
                 y="17"
@@ -55,7 +55,7 @@ const SignupForm = () => {
             </svg>
           </div>
         </div>
-        <h2 className="text-3xl font-extrabold text-center text-indigo-700 mb-2 tracking-tight">
+       <h2 className="text-3xl font-extrabold text-center text-[#60B5FF] mb-2 tracking-tight">
           Create an Account
         </h2>
         <p className="text-center text-gray-500 mb-6 text-sm">
@@ -155,7 +155,7 @@ const SignupForm = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-indigo-500 to-blue-500 text-white py-2.5 rounded-xl font-semibold shadow-md hover:from-indigo-600 hover:to-blue-600 hover:shadow-lg transition duration-300 text-lg tracking-wide"
+             className="w-full bg-[#60B5FF] text-white py-2.5 rounded-xl font-semibold shadow-md hover:bg-[#4daae8] hover:shadow-lg transition duration-300 text-lg tracking-wide"
           >
             Register
           </button>
