@@ -98,12 +98,12 @@ const LoginModal = ({ onClose }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="fixed inset-0 bg-slate-400 bg-opacity-50 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-slate-300 bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white w-[750px] h-[430px] flex rounded-lg overflow-hidden shadow-xl relative">
         {/* Left - Login Form */}
         <div className="w-1/2 p-10 flex flex-col justify-center">
-          <h1 className="text-3xl font-extrabold text-[#0c1a2d] mb-2">
-            Trip<span className="text-[#60B5FF]">Buddy</span>
+          <h1 className="text-2xl text-black font-bold mb-3">
+            Trip<span style={{ color: "#60B5FF" }}>Buddy</span>
           </h1>
           <p className="text-xl text-gray-800 mb-6 font-semibold">
             Sign into your account
@@ -117,7 +117,8 @@ const LoginModal = ({ onClose }) => {
               <input
                 type="text"
                 placeholder="Username"
-                className="w-full py-3 pl-10 pr-4 rounded-full border border-gray-300 focus:outline-[#60B5FB] text-base"
+                className="w-full py-3 pl-10 pr-4 rounded-full border border-gray-500 focus:outline-[#60B5FB] text-base"
+                required
               />
             </div>
 
@@ -128,7 +129,8 @@ const LoginModal = ({ onClose }) => {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
-                className="w-full py-3 pl-10 pr-10 rounded-full border border-gray-300 focus:outline-[#60B5FB] text-base"
+                className="w-full py-3 pl-10 pr-10 rounded-full border border-gray-500 focus:outline-[#60B5FB] text-base"
+                required
               />
               <span
                 className="absolute right-4 top-1/2 -translate-y-1/2 cursor-pointer text-gray-600"
@@ -160,16 +162,16 @@ const LoginModal = ({ onClose }) => {
             className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage:
-                "url('https://t4.ftcdn.net/jpg/00/65/48/25/360_F_65482539_C0ZozE5gUjCafz7Xq98WB4dW6LAhqKfs.jpg')",
+                "url('https://images.unsplash.com/photo-1541300613939-71366b37c92e?q=80&w=1205&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
               clipPath: "polygon(15% 0, 100% 0%, 100% 100%, 0% 100%)",
             }}
           ></div>
           <Link to="/">
             <button
-              className="absolute top-4 right-4 bg-[#0c1a2d] text-white rounded-full w-8 h-8 flex items-center justify-center text-xl z-10"
+              className="absolute top-4 right-4 bg-[#60B5FF] text-white rounded-full w-8 h-8 flex items-center justify-center text-xl z-10"
               onClick={onClose}
             >
-              ⨯
+              ×
             </button>
           </Link>
         </div>
