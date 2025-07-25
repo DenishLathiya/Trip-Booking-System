@@ -11,6 +11,7 @@ import Booking from "./Pages/Booking";
 import ScrollToTop from "react-scroll-to-top";
 import Login from "./Pages/login";
 import SignupForm from "./Pages/Signup";
+import TourDetalipage from "./Pages/TourDetalipage";
 
 const router = createBrowserRouter([
   {
@@ -86,6 +87,16 @@ const router = createBrowserRouter([
     element: (
       <>
         <SignupForm />
+      </>
+    ),
+  },
+  {
+    path: "/Detail",
+    element: (
+      <>
+          <Navbar />
+        <TourDetalipage />
+        <Footer />
       </>
     ),
   },
