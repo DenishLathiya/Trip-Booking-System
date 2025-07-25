@@ -38,26 +38,19 @@ const SignupForm = () => {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 rounded-full opacity-20 -z-10 blur-2xl translate-x-1/4 translate-y-1/4"></div>
       <div className="max-w-lg w-full bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 md:p-12 border border-indigo-100">
         {/* Logo/Avatar */}
-        <div className="flex justify-center mb-6">
-          <div className="bg-indigo-100 rounded-full p-4 shadow-lg">
-            <svg width="40" height="40" fill="none" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="12" fill="#60B5FF" />
-              <text
-                x="12"
-                y="17"
-                textAnchor="middle"
-                fontSize="14"
-                fill="#fff"
-                fontWeight="bold"
-              >
-                TB
-              </text>
-            </svg>
+        {
+          <div className="flex justify-center mb-6">
+            <h1 className="text-2xl text-black font-bold">
+              Trip<span style={{ color: "#60B5FF" }}>Buddy</span>
+            </h1>
           </div>
-        </div>
-       <h2 className="text-3xl font-extrabold text-center text-[#60B5FF] mb-2 tracking-tight">
-          Create an Account
-        </h2>
+        }
+        <p
+          className="text-xl text-center font-semibold text-black mb-2
+            tracking-tight"
+        >
+          Create your account
+        </p>
         <p className="text-center text-gray-500 mb-6 text-sm">
           Join TripBuddy and start your adventure!
         </p>
@@ -155,7 +148,7 @@ const SignupForm = () => {
           {/* Submit Button */}
           <button
             type="submit"
-             className="w-full bg-[#60B5FF] text-white py-2.5 rounded-xl font-semibold shadow-md hover:bg-[#4daae8] hover:shadow-lg transition duration-300 text-lg tracking-wide"
+            className="w-full bg-[#60B5FF] text-white py-2.5 rounded-xl font-semibold shadow-md hover:bg-[#4daae8] hover:shadow-lg transition duration-300 text-lg tracking-wide"
           >
             Register
           </button>
