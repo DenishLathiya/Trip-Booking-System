@@ -21,26 +21,61 @@ const About = () => {
                 HOW WE ARE BEST <br /> FOR TRAVEL!
               </div>
             </div>
-            <h1 className="md:text-4xl font-bold mt-6 mb-4 text-3xl">
-              How We Are Best For Travel !
+            <h1 className="md:text-4xl font-bold mt-6 mb-4 text-3xl ml-10">
+              Discover the World with Us
             </h1>
-            <p className="text-gray-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatibus incidunt aperiam vel laboriosam odio officia, tenetur
-              iure qui? Officiis placeat iste ratione perspiciatis rerum sed
-              magni commodi pariatur reiciendis dicta molestiae dolor tenetur,
-              dolorem minus exercitationem quod adipisci, ad tempore. Suscipit
-              iste impedit soluta omnis laborum quisquam eveniet. Eos ipsam sed
-              eligendi architecto libero doloremque nobis fugit, asperiores
-              molestiae ullam nulla mollitia quidem maxime totam delectus
-              itaque? Quisquam impedit, cum quo tempore at velit? Voluptate
-              rerum possimus vel numquam perspiciatis sint adipisci, veritatis
-              ullam placeat, repellat similique ea pariatur officiis laborum
-              eligendi porro eos perferendis consectetur, et ex tempore.
-              Facilis, incidunt? Libero nostrum tempore repellat iste assumenda
-              nulla doloremque similique sequi, facere tempora voluptates enim
-              aspernatur quod voluptatibus tenetur dicta, nesciunt explicabo!
-              Veritatis, officia a!
+            <p className="text-black ml-10">
+              Welcome to TripBuddy — your trusted travel partner for
+              unforgettable adventures around the globe. We are passionate about
+              helping travelers explore the world with ease, confidence, and
+              excitement. Whether you’re planning a weekend getaway, a cultural
+              expedition, or a luxurious vacation, TripBuddy is here to make
+              your journey seamless and memorable.
+            </p>
+
+            <h1 className="md:text-4xl font-bold mt-6 mb-4 text-3xl ml-10">
+              🌍 Who We Are
+            </h1>
+            <p className="text-black ml-10">
+              TripBuddy is a team of travel enthusiasts, planners, and explorers
+              with one mission: to simplify the way people experience the world.
+              With years of experience in the travel and tourism industry, we’ve
+              curated a platform that brings together the best destinations,
+              affordable packages, and real-time booking convenience — all in
+              one place.
+            </p>
+
+            <h1 className="md:text-4xl font-bold mt-6 mb-4 text-3xl ml-10">
+              🧭 What We Offer
+            </h1>
+            <p className="text-black ml-10">
+              ✈️ Flight, hotel & tour package booking <br></br>
+              🚐 Customizable itineraries for individuals, couples & groups
+              <br />
+              🛳️Adventure & luxury travel experiences <br />
+              🗺️ 24/7 support and live updates <br />
+              📱 User-friendly app and website for hassle-free planning
+            </p>
+            <h1 className="md:text-4xl font-bold mt-6 mb-4 text-3xl ml-10">
+              🌟 Why Choose TripBuddy?
+            </h1>
+            <p className="text-black ml-10">
+              ✅ Trusted by thousands of travelers
+              <br />
+              ✅ Real-time prices and availability <br />
+              ✅ Handpicked experiences and local guides <br />
+              ✅ Transparent pricing, no hidden fees <br />
+              ✅ 24/7 dedicated support team
+              <br />
+            </p>
+            <h1 className="md:text-4xl font-bold mt-6 mb-4 text-3xl ml-10">
+              💬 Our Promise
+            </h1>
+            <p className="text-black ml-10">
+              At TripBuddy, we believe that travel should be joyful — not
+              stressful. From your first click to your final destination, we're
+              with you every step of the way. Let us take care of the details —
+              you just enjoy the journey.
             </p>
           </div>
           <div className="flex-1">
