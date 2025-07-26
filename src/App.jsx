@@ -91,7 +91,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/Detail",
+    path: "/Details",
     element: (
       <>
           <Navbar />

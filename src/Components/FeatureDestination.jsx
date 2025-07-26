@@ -188,9 +188,11 @@ const FeatureDestination = () => {
                           Book now
                         </button>
                          </Link>
+                           <Link to="/details">
                         <button className="px-5 py-3 rounded-lg text-white text-base font-semibold bg-gradient-to-r from-[#121f4d] to-[#1a2a6c] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:from-indigo-5g00 hover:to-indigo-800">
                           Details
                         </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
