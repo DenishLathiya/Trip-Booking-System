@@ -181,13 +181,6 @@ const TourDetails = () => {
           </span>
         </div>
 
-        {/* Tour Type */}
-        <div className="flex items-center gap-3">
-          <FaTags className="text-[#60B5FF]" />
-          <span className="text-sm">
-            Tour Type: <span className="font-semibold">Daily Tour</span>
-          </span>
-        </div>
       </div>
 
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mt-6">
