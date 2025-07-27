@@ -54,7 +54,7 @@ const Navbar = () => {
                 onClick={() => setShowLoginModal(true)} // ✅ open modal
                 className="bg-[#4e9de3] hover:bg-[#60B5FB] text-center text-white px-6 py-2 rounded-md font-semibold transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
               >
-                Sign In
+                Login
               </button>
             </nav>
 
