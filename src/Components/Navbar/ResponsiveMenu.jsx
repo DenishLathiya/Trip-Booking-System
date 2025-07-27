@@ -44,6 +44,12 @@ const ResponsiveMenu = ({ showMenu, setShowMenu }) => {
             <Link to="/booking">
               <li onClick={() => setShowMenu(false)}>Booking</li>
             </Link>
+            <Link to="/tour-list">
+              <li onClick={() => setShowMenu(false)}>Tour-List</li>
+            </Link>
+            <Link to="/add-tour">
+              <li onClick={() => setShowMenu(false)}>Add-Tour</li>
+            </Link>
             <Link to="#">
               <button
                 onClick={() => setShowMenu(false)}
