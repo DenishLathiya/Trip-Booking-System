@@ -12,6 +12,8 @@ import ScrollToTop from "react-scroll-to-top";
 import Login from "./Pages/login";
 import SignupForm from "./Pages/Signup";
 import TourDetalipage from "./Pages/TourDetalipage";
+import TourList from "./Pages/Tout-List";
+import AddTour from "./Pages/Add-Tour";
 
 const router = createBrowserRouter([
   {
@@ -94,9 +96,27 @@ const router = createBrowserRouter([
     path: "/Details",
     element: (
       <>
-          <Navbar />
+        <Navbar />
         <TourDetalipage />
         <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/tour-list",
+    element: (
+      <>
+        <Navbar />
+        <TourList />
+      </>
+    ),
+  },
+  {
+    path: "/add-tour",
+    element: (
+      <>
+        <Navbar />
+        <AddTour />
       </>
     ),
   },
@@ -116,7 +136,6 @@ const App = () => {
           justifyContent: "center",
         }}
       />
-      
     </>
   );
 };
