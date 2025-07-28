@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
@@ -11,17 +11,41 @@ const Navbar = () => {
   const location = useLocation();
 
   const toggleMenu = () => setShowMenu(!showMenu);
+  const [loginType, setLoginType] = useState(null);
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About Us", path: "/about" },
-    { name: "Tours", path: "/tours" },
-    { name: "Bookings", path: "/booking" },
-    { name: "Gallery", path: "/gallery" },
-    { name: "Contact", path: "/contact" },
-    { name: "Tour-List", path: "/tour-list" },
-    { name: "Add-Tour", path: "/add-tour" },
-  ];
+  useEffect(() => {
+    const storedType = localStorage.getItem("loginType");
+    setLoginType(storedType);
+  }, []);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    // ✅ Save loginType to localStorage
+    localStorage.setItem("loginType", loginType);
+
+    // ✅ Show toast and close modal
+    setShowToast(true);
+
+    setTimeout(() => {
+      setShowToast(false);
+      onClose(); // Close the modal
+
+      // Redirect logic or custom behavior
+      if (loginType === "admin") {
+        alert("Redirecting to admin dashboard...");
+      } else {
+        alert("Redirecting to user dashboard...");
+      }
+    }, 2000);
+  };
+
+  const getLinkClass = (path) =>
+    `pb-2 border-b-2 transition-colors duration-300 ${
+      location.pathname === path
+        ? "text-[#60B5FF] border-[#60B5FF]"
+        : "border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF]"
+    }`;
 
   return (
     <header className="sticky mx-auto top-0 transition-all py-6 bg-transparent z-10">
@@ -36,28 +60,59 @@ const Navbar = () => {
           <div className="flex items-center gap-5">
             <nav className="hidden md:flex gap-7 ">
               <ul className="flex items-center font-semibold text-white text-xl gap-7 ">
-                {navLinks.map((link) => (
-                  <Link to={link.path} key={link.name}>
-                    <li
-                      className={`pb-2 border-b-2 transition-colors duration-300 ${
-                        location.pathname === link.path
-                          ? "text-[#60B5FF] border-[#60B5FF]"
-                          : "border-transparent hover:text-[#60B5FF] hover:border-[#60B5FF]"
-                      }`}
-                    >
-                      {link.name}
+                {loginType === "user" && (
+                  <>
+                    <li className={getLinkClass("/")}>
+                      <Link to="/">Home</Link>
                     </li>
-                  </Link>
-                ))}
+
+                    <li className={getLinkClass("/about")}>
+                      <Link to="/about">About</Link>
+                    </li>
+                    <li className={getLinkClass("/tours")}>
+                      <Link to="/tours">Tours</Link>
+                    </li>
+
+                    <li className={getLinkClass("/contact")}>
+                      <Link to="/contact">Contact</Link>
+                    </li>
+                  </>
+                )}
+
+                {/* Show for ADMIN */}
+                {loginType === "admin" && (
+                  <>
+                    <li className={getLinkClass("/add-tour")}>
+                      <Link to="/add-tour">Add Tour</Link>
+                    </li>
+
+                    <li className={getLinkClass("/tour-list")}>
+                      <Link to="/tour-list">Tour List</Link>
+                    </li>
+                  </>
+                )}
               </ul>
 
-              {/* ✅ Replace Link with onClick handler */}
-              <button
-                onClick={() => setShowLoginModal(true)} // ✅ open modal
-                className="bg-[#4e9de3] hover:bg-[#60B5FB] text-center text-white px-6 py-2 rounded-md font-semibold transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-              >
-                Login
-              </button>
+              {!loginType && (
+                <button
+                  onClick={() => setShowLoginModal(true)}
+                  className="bg-[#4e9de3] hover:bg-[#60B5FB] text-center text-white px-6 py-2 rounded-md font-semibold transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+                >
+                  Login
+                </button>
+              )}
+
+              {loginType && (
+                <button
+                  onClick={() => {
+                    localStorage.removeItem("loginType");
+                    setLoginType(null);
+                  }}
+                  className="bg-red-500 hover:bg-red-600  text-center text-white px-6 py-2 rounded-md font-semibold transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+                >
+                  Logout
+                </button>
+              )}
             </nav>
 
             <HiMenuAlt1
@@ -72,7 +127,13 @@ const Navbar = () => {
 
         {/* ✅ Conditionally render the Login Modal */}
         {showLoginModal && (
-          <LoginModal onClose={() => setShowLoginModal(false)} />
+          <LoginModal
+            onClose={() => {
+              setShowLoginModal(false);
+              const type = localStorage.getItem("loginType");
+              setLoginType(type); // ✅ Re-read after login
+            }}
+          />
         )}
       </div>
     </header>

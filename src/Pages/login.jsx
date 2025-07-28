@@ -5,31 +5,30 @@ import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 const LoginModal = ({ onClose }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showToast, setShowToast] = useState(false);
+  const [loginType, setLoginType] = useState("user"); // 👈 Login type state
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Simulate successful login
+    localStorage.setItem("loginType", loginType); // ✅ Save to localStorage
     setShowToast(true);
 
-    // Optional: close modal after delay
     setTimeout(() => {
       setShowToast(false);
-      onClose(); // Close modal after toast
-    }, 3000);
+      onClose(); // ✅ Close modal
+    }, 2000);
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      {/* Toast message */}
       {showToast && (
-        <div className="fixed top-5 right-5 bg-green-500 text-white px-5 py-3 rounded shadow-lg z-50 animate-slide-in">
+        <div className="fixed top-5 right-5 bg-green-500 text-white px-5 py-3 rounded shadow-lg z-50 animate-slide-in text-xl">
           ✅ Login Successfully
         </div>
       )}
 
-      <div className="bg-white w-[700px] h-[450px] flex rounded-lg overflow-hidden shadow-xl relative">
-        {/* Left: Login Form */}
+      <div className="bg-white w-[700px] h-[500px] flex rounded-lg overflow-hidden shadow-xl relative">
+        {/* Left Side */}
         <div className="w-1/2 p-6 flex flex-col justify-center">
           <h1 className="text-3xl text-black font-bold mb-3">
             Trip<span style={{ color: "#60B5FF" }}>Buddy</span>
@@ -39,6 +38,21 @@ const LoginModal = ({ onClose }) => {
           </p>
 
           <form onSubmit={handleLogin}>
+            {/* Login Type Dropdown */}
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Login As:
+              </label>
+              <select
+                value={loginType}
+                onChange={(e) => setLoginType(e.target.value)}
+                className="w-full border border-gray-400 py-2 px-3 rounded-full text-base"
+              >
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+            </div>
+
             {/* Username */}
             <div className="relative mb-4">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg">
@@ -89,7 +103,7 @@ const LoginModal = ({ onClose }) => {
           </div>
         </div>
 
-        {/* Right: Image Section */}
+        {/* Right Side */}
         <div className="w-1/2 relative overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -100,7 +114,6 @@ const LoginModal = ({ onClose }) => {
             }}
           ></div>
 
-          {/* Close Button */}
           <button
             onClick={onClose}
             className="absolute top-3 right-3 bg-[#60B5FF] text-white rounded-full w-8 h-8 flex items-center justify-center text-lg z-10"
@@ -110,7 +123,6 @@ const LoginModal = ({ onClose }) => {
         </div>
       </div>
 
-      {/* Toast animation */}
       <style>{`
         .animate-slide-in {
           animation: slideIn 0.3s ease-out;
