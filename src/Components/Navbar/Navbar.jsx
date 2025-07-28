@@ -69,8 +69,13 @@ const Navbar = () => {
                     <li className={getLinkClass("/about")}>
                       <Link to="/about">About</Link>
                     </li>
+
                     <li className={getLinkClass("/tours")}>
                       <Link to="/tours">Tours</Link>
+                    </li>
+
+                    <li className={getLinkClass("/booking")}>
+                      <Link to="/booking">Bookings</Link>
                     </li>
 
                     <li className={getLinkClass("/contact")}>
@@ -82,6 +87,10 @@ const Navbar = () => {
                 {/* Show for ADMIN */}
                 {loginType === "admin" && (
                   <>
+                    <li className={getLinkClass("/")}>
+                      <Link to="/">Home</Link>
+                    </li>
+
                     <li className={getLinkClass("/add-tour")}>
                       <Link to="/add-tour">Add Tour</Link>
                     </li>
@@ -108,7 +117,7 @@ const Navbar = () => {
                     localStorage.removeItem("loginType");
                     setLoginType(null);
                   }}
-                  className="bg-red-500 hover:bg-red-600  text-center text-white px-6 py-2 rounded-md font-semibold transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+                  className="bg-red-600 hover:bg-red-500  text-center text-white px-6 py-2 rounded-md font-semibold transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
                 >
                   Logout
                 </button>
