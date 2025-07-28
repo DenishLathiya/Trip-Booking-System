@@ -17,38 +17,38 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex flex-col lg:items-center">
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg  mb-4 font-semibold">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="hover:text-[#60B5FF]">
+                <a href="/" className="hover:text-[#60B5FF]">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#60B5FF]">
-                  Destinations
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#60B5FF]">
-                  Tours
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#60B5FF]">
+                <a href="about" className="hover:text-[#60B5FF]">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#60B5FF]">
-                  Contact
+                <a href="/tours" className="hover:text-[#60B5FF]">
+                  Tours
+                </a>
+              </li>
+              <li>
+                <a href="/booking" className="hover:text-[#60B5FF]">
+                  Bookings
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="hover:text-[#60B5FF]">
+                  Contact Us
                 </a>
               </li>
             </ul>
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2 text-sm font-semibold">
               <li>Address: 242 AR Mall Surat</li>
               <a href="tel:+917567236791">
                 <li>Phone: +91 7567236791</li>
@@ -73,7 +73,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-gray-700 text-center justify-end text-sm">
+        <div className="mt-8 pt-8 border-t border-gray-700 text-center justify-end text-sm font-semibold">
           <p>
             &copy; {new Date().getFullYear()} Trip Buddy all right reserved.
           </p>

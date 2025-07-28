@@ -52,14 +52,14 @@ const Navbar = () => {
       <div className="bg-[#121f4d]/95 px-4 fixed w-full z-50 top-0 py-2">
         <div className="max-w-7xl mx-auto py-2 px-5 flex bg-transparent justify-between items-center">
           <Link to="/">
-            <h1 className="text-2xl text-white font-bold">
+            <h1 className="text-2xl text-white font-bold ">
               Trip<span style={{ color: "#60B5FF" }}>Buddy</span>
             </h1>
           </Link>
 
           <div className="flex items-center gap-5">
             <nav className="hidden md:flex gap-7 ">
-              <ul className="flex items-center font-semibold text-white text-xl gap-7 ">
+              <ul className="flex items-center font-bold text-white text-xl gap-7 cursor-pointer">
                 {loginType === "user" && (
                   <>
                     <li className={getLinkClass("/")}>
@@ -67,7 +67,7 @@ const Navbar = () => {
                     </li>
 
                     <li className={getLinkClass("/about")}>
-                      <Link to="/about">About</Link>
+                      <Link to="/about">About Us</Link>
                     </li>
 
                     <li className={getLinkClass("/tours")}>
@@ -79,7 +79,7 @@ const Navbar = () => {
                     </li>
 
                     <li className={getLinkClass("/contact")}>
-                      <Link to="/contact">Contact</Link>
+                      <Link to="/contact">Contact Us</Link>
                     </li>
                   </>
                 )}
@@ -114,10 +114,15 @@ const Navbar = () => {
               {loginType && (
                 <button
                   onClick={() => {
-                    localStorage.removeItem("loginType");
-                    setLoginType(null);
+                    const isConfirmed = window.confirm(
+                      "Are you sure you want to logout?"
+                    );
+                    if (isConfirmed) {
+                      localStorage.removeItem("loginType");
+                      setLoginType(null);
+                    }
                   }}
-                  className="bg-red-600 hover:bg-red-500  text-center text-white px-6 py-2 rounded-md font-semibold transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+                  className="bg-red-600 hover:bg-red-500  text-center text-white px-6 py-2 rounded-md font-semibold transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 "
                 >
                   Logout
                 </button>

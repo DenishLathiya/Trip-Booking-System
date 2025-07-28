@@ -7,7 +7,7 @@ import price from "../assets/best-price.gif";
 const About = () => {
   return (
     <div>
-      <TopBanner text="About" />
+      <TopBanner text="About Us" />
       <div className="max-w-7xl mx-auto my-10">
         <div className="flex flex-col md:flex-row px-4 md:px-0 gap-4">
           <div className="flex-1">

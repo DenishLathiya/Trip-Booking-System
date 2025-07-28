@@ -27,7 +27,7 @@ const LoginModal = ({ onClose }) => {
         </div>
       )}
 
-      <div className="bg-white w-[700px] h-[500px] flex rounded-lg overflow-hidden shadow-xl relative">
+      <div className="bg-white w-[700px] h-[490px] flex rounded-lg overflow-hidden shadow-xl relative">
         {/* Left Side */}
         <div className="w-1/2 p-6 flex flex-col justify-center">
           <h1 className="text-3xl text-black font-bold mb-3">
@@ -46,7 +46,7 @@ const LoginModal = ({ onClose }) => {
               <select
                 value={loginType}
                 onChange={(e) => setLoginType(e.target.value)}
-                className="w-full border border-gray-400 py-2 px-3 rounded-full text-base"
+                className="w-full border border-gray-400 py-2 px-3 rounded-full focus:outline-none focus:ring-2 focus:ring-[#60B5FB] text-base"
               >
                 <option value="user">User</option>
                 <option value="admin">Admin</option>
@@ -62,6 +62,7 @@ const LoginModal = ({ onClose }) => {
                 type="text"
                 placeholder="Username"
                 id="user"
+                maxLength={10}
                 className="w-full py-2.5 pl-10 pr-4 rounded-full border border-gray-400 focus:outline-none focus:ring-2 focus:ring-[#60B5FB] text-base"
                 required
               />
