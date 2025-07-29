@@ -168,7 +168,7 @@ const LoginModal = ({ onClose }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       {showToast && (
-        <div className="fixed top-5 right-5 bg-green-500 text-white px-5 py-3 rounded shadow-lg z-50 animate-slide-in text-xl">
+        <div className="fixed top-5 right-5 bg-[#008000] text-white px-5 py-3 rounded shadow-lg z-50 animate-slide-in text-xl">
           ✅ Login Successfully
         </div>
       )}
