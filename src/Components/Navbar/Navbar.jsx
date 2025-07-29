@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
-import LoginModal from "../../Pages/login"; // ✅ adjust path as per your project
+import LoginModal from "../../Pages/login";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-  const [showLoginModal, setShowLoginModal] = useState(false); // ✅ add this
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   const location = useLocation();
 
@@ -21,17 +21,14 @@ const Navbar = () => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // ✅ Save loginType to localStorage
     localStorage.setItem("loginType", loginType);
 
-    // ✅ Show toast and close modal
     setShowToast(true);
 
     setTimeout(() => {
       setShowToast(false);
-      onClose(); // Close the modal
+      onClose();
 
-      // Redirect logic or custom behavior
       if (loginType === "admin") {
         alert("Redirecting to admin dashboard...");
       } else {
@@ -84,7 +81,6 @@ const Navbar = () => {
                   </>
                 )}
 
-                {/* Show for ADMIN */}
                 {loginType === "admin" && (
                   <>
                     <li className={getLinkClass("/")}>
@@ -139,13 +135,12 @@ const Navbar = () => {
 
         <ResponsiveMenu showMenu={showMenu} setShowMenu={setShowMenu} />
 
-        {/* ✅ Conditionally render the Login Modal */}
         {showLoginModal && (
           <LoginModal
             onClose={() => {
               setShowLoginModal(false);
               const type = localStorage.getItem("loginType");
-              setLoginType(type); // ✅ Re-read after login
+              setLoginType(type);
             }}
           />
         )}
