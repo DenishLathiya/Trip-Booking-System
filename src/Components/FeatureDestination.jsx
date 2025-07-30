@@ -14,7 +14,6 @@ import { Link } from "react-router-dom";
 import "../Components/Css/reactSlick.css";
 import LoginModal from "../Pages/login";
 import { useEffect, useState } from "react";
-import { set } from "mongoose";
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
   <img src={NEXT2} alt="prevArrow" {...props} />
