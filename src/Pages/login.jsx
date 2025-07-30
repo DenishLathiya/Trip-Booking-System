@@ -59,8 +59,6 @@ const LoginModal = ({ onClose }) => {
                 type="text"
                 placeholder="Username"
                 id="user"
-                minLength={8}
-                maxLength={10}
                 className="w-full py-2.5 pl-10 pr-4 rounded-full border border-gray-400 focus:outline-none focus:ring-2 focus:ring-[#60B5FB] text-base"
                 required
               />
