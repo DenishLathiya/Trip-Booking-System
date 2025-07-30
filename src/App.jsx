@@ -108,6 +108,7 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <TourList />
+         <Footer />
       </>
     ),
   },
@@ -117,6 +118,7 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <AddTour />
+        <Footer />
       </>
     ),
   },

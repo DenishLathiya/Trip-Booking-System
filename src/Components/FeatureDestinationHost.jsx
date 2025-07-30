@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Clock, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import "../Components/Css/reactSlick.css";
+import TopBanner from "./TopBanner";
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
   <img src={NEXT2} alt="prevArrow" {...props} />
@@ -138,51 +139,48 @@ const FeatureDestinationHost = () => {
 
   return (
     <>
-      <section className="w-full py-12 md:py-24 lg:pt-32 px-6 md:px-0">
-        <div className="max-w-7xl mx-auto px-4 md:px-6">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-3 font-serif">
-            Featured Destinations
-          </h2>
-          <hr className="text-red-500 w-[200px] bg-[#60B5FF] mx-auto h-1 mb-10" />
-          <div className="slider-container">
-            <Slider {...settings}>
-              {destinationJson.map((destination) => (
-                <div key={destination.id} className="px-3">
-                  <div className="bg-white rounded-2xl shadow-xl overflow-hidden scale-100 transition-all duration-300">
-                    <div className="relative">
-                      <img
-                        src={destination.image}
-                        alt={destination.title}
-                        className="object-cover w-full h-64 hover:scale-110 transition-all duration-300"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                        {destination.title}
-                      </h3>
-                      <p className="text-gray-500 text-base mb-4">
-                        {destination.description}
+     <TopBanner text="Tours" />
+      <div className="max-w-7xl md:mx-auto my-10">
+        <h1 className="text-3xl lg:text-4xl font-serif mb-3 font-semibold text-center">
+          Top Destination
+        </h1>
+        <hr className="text-red-500 w-[200px] bg-[#60B5FF] mx-auto h-1 mb-10" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
+          {destinationJson.map((destination) => (
+            <div key={destination.id} className="px-3">
+              <div className="w-[420px] bg-white rounded-2xl shadow-xl overflow-hidden scale-100 transition-all duration-300">
+                <div className="relative">
+                  <img
+                    src={destination.image}
+                    alt={destination.title}
+                    className="object-cover w-full h-64 hover:scale-110 transition-all duration-300"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                    {destination.title}
+                  </h3>
+                  <p className="text-gray-500 text-base mb-4">
+                    {destination.description}
+                  </p>
+                  <div className="border rounded-xl p-4 text-base text-gray-600 mb-5 space-y-3">
+                    <p className="flex items-center gap-2">
+                      <span className="text-orange-400 text-lg">★★★★☆</span>
+                      {destination.rating} ({destination.reviews} Reviews)
+                    </p>
+                    <p className="flex items-center gap-3">
+                      ⏱️ {destination.duration} 👥 {destination.groupSize}
+                    </p>
+                    <p className="flex items-center gap-2">
+                      📍 {destination.location}
+                    </p>
+                    <div className="flex justify-between items-center pt-2">
+                      <p className="text-2xl font-bold text-gray-900">
+                        Rs.{destination.price}
                       </p>
-
-                      <div className="border rounded-xl p-4 text-base text-gray-600 mb-5 space-y-3">
-                        <p className="flex items-center gap-2">
-                          <span className="text-orange-400 text-lg">★★★★☆</span>
-                          {destination.rating} ({destination.reviews} Reviews)
-                        </p>
-                        <p className="flex items-center gap-3">
-                          ⏱️ {destination.duration} 👥 {destination.groupSize}
-                        </p>
-                        <p className="flex items-center gap-2">
-                          📍 {destination.location}
-                        </p>
-                        <div className="flex justify-between items-center pt-2">
-                          <p className="text-2xl font-bold text-gray-900">
-                            Rs.{destination.price}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="flex gap-5">
+                    </div>
+                  </div>
+                <div className="flex gap-5">
                         <Link to="/edit">
                           <button className="px-5 py-3 bg-[#47bf4d] rounded-lg text-white text-base font-semibold bg-gradient-to-r from-bg-[#60B5FF] to-bg-[#60B5FF] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                             Edit
@@ -194,16 +192,17 @@ const FeatureDestinationHost = () => {
                           </button>
                         </Link>
                       </div>
-                    </div>
-                  </div>
                 </div>
-              ))}
-            </Slider>
-          </div>
+              </div>
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
     </>
   );
 };
 
 export default FeatureDestinationHost;
+
+
+

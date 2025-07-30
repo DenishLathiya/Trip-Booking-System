@@ -87,12 +87,12 @@ const Navbar = () => {
                       <Link to="/">Home</Link>
                     </li>
 
-                    <li className={getLinkClass("/add-tour")}>
-                      <Link to="/add-tour">Add Tour</Link>
-                    </li>
-
                     <li className={getLinkClass("/tour-list")}>
                       <Link to="/tour-list">Tour List</Link>
+                    </li>
+
+                     <li className={getLinkClass("/add-tour")}>
+                      <Link to="/add-tour">Add Tour</Link>
                     </li>
                   </>
                 )}
