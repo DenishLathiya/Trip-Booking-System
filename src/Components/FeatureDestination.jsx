@@ -143,7 +143,7 @@ const FeatureDestination = () => {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-3 font-serif">
             Featured Destinations
           </h2>
-          <hr className="text-red-500 w-[200px] bg-[#60B5FF] mx-auto h-1 mb-10" />
+          <hr className="w-[200px] bg-[#60B5FF] mx-auto h-1 mb-10" />
           <div className="slider-container">
             <Slider {...settings}>
               {destinationJson.map((destination) => (
