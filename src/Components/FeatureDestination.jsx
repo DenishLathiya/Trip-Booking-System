@@ -12,6 +12,9 @@ import "slick-carousel/slick/slick-theme.css";
 import { Clock, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import "../Components/Css/reactSlick.css";
+import LoginModal from "../Pages/login";
+import { useEffect, useState } from "react";
+import { set } from "mongoose";
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
   <img src={NEXT2} alt="prevArrow" {...props} />
@@ -21,6 +24,23 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
 );
 
 const FeatureDestination = () => {
+  const [loginType, setLoginType] = useState(null);
+
+  useEffect(() => {
+    const storedType = localStorage.getItem("loginType");
+    setLoginType(storedType);
+  }, []);
+
+  // Handler for Book and Details buttons
+  const handleButtonClick = (target) => {
+    if (!loginType) {
+      window.location.href = "/";
+      alert("please Login to continue");
+    } else {
+      window.location.href = target;
+    }
+  };
+
   const settings = {
     dots: false,
     infinite: true,
@@ -183,16 +203,19 @@ const FeatureDestination = () => {
                       </div>
 
                       <div className="flex gap-5">
-                         <Link to="/booking">
-                        <button className="px-5 py-3 bg-[#60B5FF] rounded-lg text-white text-base font-semibold bg-gradient-to-r from-bg-[#60B5FF] to-bg-[#60B5FF] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                        <button
+                          className="px-5 py-3 bg-[#60B5FF] rounded-lg text-white text-base font-semibold bg-gradient-to-r from-bg-[#60B5FF] to-bg-[#60B5FF] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+                          onClick={() => handleButtonClick("/booking")}
+                        >
                           Book now
                         </button>
-                         </Link>
-                           <Link to="/details">
-                        <button className="px-5 py-3 rounded-lg text-white text-base font-semibold bg-gradient-to-r from-[#121f4d] to-[#1a2a6c] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:from-indigo-5g00 hover:to-indigo-800">
+
+                        <button
+                          className="px-5 py-3 rounded-lg text-white text-base font-semibold bg-gradient-to-r from-[#121f4d] to-[#1a2a6c] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:from-indigo-5g00 hover:to-indigo-800"
+                          onClick={() => handleButtonClick("/details")}
+                        >
                           Details
                         </button>
-                        </Link>
                       </div>
                     </div>
                   </div>
