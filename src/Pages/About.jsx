@@ -77,7 +77,15 @@ const About = () => {
               with you every step of the way. Let us take care of the details —
               you just enjoy the journey.
             </p>
+            <h1 className="md:text-4xl font-bold mt-6 mb-4 text-3xl ml-10">
+              🌐 Our Vision
+            </h1>
+            <p className="text-black ml-10">
+              To become a leading travel platform that connects people to
+              unforgettable experiences, worldwide.
+            </p>
           </div>
+
           <div className="flex-1">
             <div className="bg-blue-100 hover:shadow-lg p-6 rounded-lg shadow-md">
               <div className="flex flex-col md:flex-row items-start mb-4 ">
