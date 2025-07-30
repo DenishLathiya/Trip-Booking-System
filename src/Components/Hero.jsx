@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import banner1 from "../assets/Hero1.jpg";
 import banner2 from "../assets/Hero3.jpg";
 import banner3 from "../assets/Hero4.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const settings = {
@@ -44,12 +45,14 @@ const Hero = () => {
                       Explore breathtaking destinations, create unforgettable
                       memories and embark on the journey of a lifetime.
                     </p>
-                    <button
-                      style={{ backgroundColor: "#60B5FF" }}
-                      className="px-3 py-2 text-white rounded-md font-semibold transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
-                    >
-                      Start Exploring
-                    </button>
+                    <Link to="tours">
+                      <button
+                        style={{ backgroundColor: "#60B5FF" }}
+                        className="px-3 py-2 text-white rounded-md font-semibold transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+                      >
+                        Start Exploring
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>

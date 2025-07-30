@@ -5,30 +5,29 @@ import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 const LoginModal = ({ onClose }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showToast, setShowToast] = useState(false);
-  const [loginType, setLoginType] = useState("user"); // 👈 Login type state
+  const [loginType, setLoginType] = useState("user");
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    localStorage.setItem("loginType", loginType); // ✅ Save to localStorage
+    localStorage.setItem("loginType", loginType);
     setShowToast(true);
 
     setTimeout(() => {
       setShowToast(false);
-      onClose(); // ✅ Close modal
+      onClose();
     }, 2000);
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       {showToast && (
-        <div className="fixed top-5 right-5 bg-green-500 text-white px-5 py-3 rounded shadow-lg z-50 animate-slide-in text-xl">
+        <div className="fixed top-5 right-5 bg-[#008000] text-white px-5 py-3 rounded shadow-lg z-50 animate-slide-in text-xl">
           ✅ Login Successfully
         </div>
       )}
 
-      <div className="bg-white w-[700px] h-[490px] flex rounded-lg overflow-hidden shadow-xl relative">
-        {/* Left Side */}
+      <div className="bg-white w-[730px] h-[490px] flex rounded-lg overflow-hidden shadow-xl relative">
         <div className="w-1/2 p-6 flex flex-col justify-center">
           <h1 className="text-3xl text-black font-bold mb-3">
             Trip<span style={{ color: "#60B5FF" }}>Buddy</span>
@@ -38,7 +37,6 @@ const LoginModal = ({ onClose }) => {
           </p>
 
           <form onSubmit={handleLogin}>
-            {/* Login Type Dropdown */}
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Login As:
@@ -53,7 +51,6 @@ const LoginModal = ({ onClose }) => {
               </select>
             </div>
 
-            {/* Username */}
             <div className="relative mb-4">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg">
                 <FaUser />
@@ -62,13 +59,13 @@ const LoginModal = ({ onClose }) => {
                 type="text"
                 placeholder="Username"
                 id="user"
+                minLength={8}
                 maxLength={10}
                 className="w-full py-2.5 pl-10 pr-4 rounded-full border border-gray-400 focus:outline-none focus:ring-2 focus:ring-[#60B5FB] text-base"
                 required
               />
             </div>
 
-            {/* Password */}
             <div className="relative mb-4">
               <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-lg">
                 <FaLock />
@@ -77,6 +74,7 @@ const LoginModal = ({ onClose }) => {
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 id="pass"
+                minLength={8}
                 className="w-full py-2.5 pl-10 pr-10 rounded-full border border-gray-400 focus:outline-none focus:ring-2 focus:ring-[#60B5FB] text-base"
                 required
               />
@@ -90,7 +88,7 @@ const LoginModal = ({ onClose }) => {
 
             <button
               type="submit"
-              className="w-full bg-[#60B5FB] text-white text-base font-medium py-2.5 rounded-lg hover:bg-[#3fa6fa] transition"
+              className="w-full bg-[#60B5FB] text-white text-base font-medium py-2.5 rounded-lg hover:bg-[#3fa6fa] transition flex justify-center items-center"
             >
               Sign in
             </button>
@@ -104,7 +102,6 @@ const LoginModal = ({ onClose }) => {
           </div>
         </div>
 
-        {/* Right Side */}
         <div className="w-1/2 relative overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"

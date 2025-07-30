@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { Rating } from "@mui/material";
+import { FaCloudUploadAlt } from "react-icons/fa";
+import bali from "../assets/bali.jpg"; 
 
 const AddTourForm = () => {
   const [form, setForm] = useState({
@@ -11,6 +14,7 @@ const AddTourForm = () => {
     imageUrl: "",
     rating: "",
   });
+  const [rating, setRating] = useState(3);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -33,116 +37,127 @@ const AddTourForm = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-2xl mt-11 mx-auto p-6 bg-white border rounded shadow-2xl"
-    >
-      <h2 className="text-2xl font-bold ml-52 text-sky-500 mb-4">
-        Add New Tour
-      </h2>
-      <div className="mb-3 inline-flex">
-        <label className="block mb-1 mr-16 font-medium">Title :</label>
-        <input
-          type="text"
-          name="title"
-          placeholder="Enter Tour Title"
-          value={form.title}
-          onChange={handleChange}
-          className="w-96 border px-3 ml-3 py-2 rounded"
-          required
-        />
-      </div>
-      <div className="mb-3 inline-flex">
-        <label className="block mb-1 mr-6 font-medium">Description :</label>
-        <textarea
-          name="description"
-          placeholder="Enter Tour Description"
-          value={form.description}
-          onChange={handleChange}
-          className="w-96 border px-3 py-2 rounded"
-          required
-        />
-      </div>
-      <div className="mb-3 inline-flex ">
-        <label className="block mb-1 mr-14 font-medium">Price :</label>
-        <input
-          type="number"
-          name="price"
-          placeholder="Enter Tour Price"
-          value={form.price}
-          onChange={handleChange}
-          className="w-96 border ml-4 px-3 py-2 rounded"
-          required
-        />
-      </div>
-      <div className="mb-3 inline-flex">
-        <label className="block mb-1 mr-8 font-medium">Day/Night :</label>
-        <input
-          type="text"
-          name="daynight"
-          placeholder="Enter Day/Night Duration"
-          value={form.daynight}
-          onChange={handleChange}
-          className="w-96 border px-3 py-2 rounded"
-          required
-        />
-      </div>
-      <div className="mb-3 inline-flex">
-        <label className="block mb-1 mr-11 font-medium">Location :</label>
-        <input
-          type="text"
-          name="location"
-          placeholder="Enter Tour Location"
-          value={form.location}
-          onChange={handleChange}
-          className="w-96 border mr-1 px-3 py-2 rounded"
-          required
-        />
-      </div>
-      <div className="mb-3 inline-flex">
-        <label className="block mb-1 mr-14 font-medium">Person :</label>
-        <input
-          type="number"
-          name="person"
-          placeholder="Enter Number of Persons"
-          value={form.person}
-          onChange={handleChange}
-          className="w-96 border px-3 py-2 rounded"
-          required
-        />
-      </div>
-      <div className="mb-3 inline-flex">
-        <label className="block mb-1 mr-9 font-medium">imageUrl :</label>
-        <input
-          type="text"
-          name="imageUrl"
-          placeholder="Enter Image URL"
-          value={form.imageUrl}
-          onChange={handleChange}
-          className="w-96 ml-1 border px-3 py-2 rounded"
-          required
-        />
-      </div>
-      <div className="mb-3 inline-flex">
-        <label className="block mb-1 mr-14 font-medium">Rating :</label>
-        <input
-          type="number"
-          name="rating"
-          placeholder="Enter Tour Rating (1-5)"
-          value={form.rating}
-          onChange={handleChange}
-          className="w-96 border px-3 py-2 rounded"
-          required
-        />
-      </div>
-      <button
-        type="submit"
-        className="bg-sky-600 block w-96 ml-28 text-white px-4 py-2 rounded hover:bg-sky-700"
-      >
-        Add Tour
-      </button>
-    </form>
+
+   <div className="w-full max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-xl mt-10 border border-gray-200">
+
+ <h2 className="text-2xl font-semibold mb-6 text-gray-800 text-center">Upload Tour Package</h2>
+
+  <div className="grid grid-cols-1 gap-6">
+ 
+   <div>
+  <label className="block text-lg font-medium text-gray-700 mb-1">Title</label>
+  <input
+    type="text"
+    className="w-full border border-gray-300 rounded-lg px-4 py-3 lg:py-4 text-lg focus:outline-none focus:ring-2 focus:ring-[#60B5FF] focus:border-[#60B5FF] transition"
+    placeholder="Enter Title"
+  />
+</div>
+
+<div className="mt-6">
+    <label className="block text-lg font-medium text-gray-700 mb-1">Description</label>
+    <textarea
+      rows={4}
+      className="w-full border border-gray-300 rounded-lg px-4 py-3 lg:py-4 text-lg focus:outline-none focus:ring-2 focus:ring-[#60B5FF] focus:border-[#60B5FF] transition"
+      placeholder="Enter description..."
+    />
+  </div>
+
+
+    <div>
+      <label className="block text-lg font-medium text-gray-700 mb-1">Location</label>
+      <input
+        type="text"
+        className="w-full border border-gray-300 rounded-lg px-4 py-3 lg:py-4 text-lg focus:outline-none focus:ring-2 focus:ring-[#60B5FF] focus:border-[#60B5FF] transition"
+        placeholder="Enter Location"
+      />
+    </div>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {/* Price */}
+  <div>
+    <label className="block text-lg font-medium text-gray-700 mb-2">Price</label>
+    <input
+      type="text"
+      className="w-full border border-gray-300 rounded-lg px-4 py-3 lg:py-4 text-lg focus:outline-none focus:ring-2 focus:ring-[#60B5FF] focus:border-[#60B5FF] transition"
+      placeholder="Enter Price"
+    />
+  </div>
+
+  <div>
+    <label className="block text-lg font-medium text-gray-700 mb-2">Day / Night</label>
+    <input
+      type="text"
+      className="w-full border border-gray-300 rounded-lg px-4 py-3 lg:py-4 text-lg focus:outline-none focus:ring-2 focus:ring-[#60B5FF] focus:border-[#60B5FF] transition"
+      placeholder="e.g. 5D/4N"
+    />
+  </div>
+
+  <div>
+    <label className="block text-lg font-medium text-gray-700 mb-2">Person</label>
+    <input
+      type="text"
+      className="w-full border border-gray-300 rounded-lg px-4 py-3 lg:py-4 text-lg focus:outline-none focus:ring-2 focus:ring-[#60B5FF] focus:border-[#60B5FF] transition"
+      placeholder="Number of People"
+    />
+  </div>
+
+  <div>
+    <label className="block text-lg font-medium text-gray-700 mb-2">Rating</label>
+    <Rating
+      name="tour-rating"
+      value={rating}
+      precision={0.5}
+      onChange={(event, newValue) => setRating(newValue)}
+    />
+  </div>
+</div>
+
+   <div>
+  <label className="block text-lg font-medium text-gray-700 mb-2">Tour Image URL</label>
+  
+  <div className="flex items-center bg-gray-50 border border-gray-300 rounded-lg px-2 py-3 lg:py-3">
+    <input
+      type="text"
+      placeholder="Paste image URL"
+      className="flex-1 bg-transparent outline-none px-2 text-lg"
+    />
+    <button className=" bg-[#60B5FF] hover:bg-[#3498DB] text-white text-sm font-semibold w-[75px] px-4 py-3 rounded-md transition">
+  ADD
+</button>
+  </div>
+</div>  
+  </div>
+
+<div className="p-6 bg-white shadow rounded-xl mt-6 border border-gray-200">
+  {/* Product Images Section */}
+  <div className="mb-6">
+    <h5 className="text-lg font-semibold text-gray-800 mb-4">PRODUCT IMAGES</h5>
+    <div className="flex flex-wrap gap-4" id="imgGrid">
+        <div className="w-28 h-28 border rounded overflow-hidden">
+          <img
+            src={bali}
+            alt="product"
+            className="w-full h-full object-cover"
+          />
+        </div>
+    </div>
+  </div>
+
+  {/* Publish Button */}
+  <button
+    type="submit"
+    className="w-full bg-[#60B5FF] hover:bg-[#3498DB] text-white font-semibold py-4 rounded-lg flex items-center justify-center gap-2 transition"
+  >
+    <FaCloudUploadAlt className="text-xl" />
+    PUBLISH AND VIEW
+  </button>
+</div>
+
+
+</div>
+
   );
 };
+
 
 export default AddTourForm;

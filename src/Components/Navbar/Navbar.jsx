@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { HiMenuAlt1 } from "react-icons/hi";
 import ResponsiveMenu from "./ResponsiveMenu";
 import LoginModal from "../../Pages/login";
@@ -7,7 +7,7 @@ import LoginModal from "../../Pages/login";
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
-
+  const navigate = useNavigate();
   const location = useLocation();
 
   const toggleMenu = () => setShowMenu(!showMenu);
@@ -87,12 +87,12 @@ const Navbar = () => {
                       <Link to="/">Home</Link>
                     </li>
 
-                    <li className={getLinkClass("/add-tour")}>
-                      <Link to="/add-tour">Add Tour</Link>
-                    </li>
-
                     <li className={getLinkClass("/tour-list")}>
                       <Link to="/tour-list">Tour List</Link>
+                    </li>
+
+                    <li className={getLinkClass("/add-tour")}>
+                      <Link to="/add-tour">Add Tour</Link>
                     </li>
                   </>
                 )}
@@ -116,9 +116,10 @@ const Navbar = () => {
                     if (isConfirmed) {
                       localStorage.removeItem("loginType");
                       setLoginType(null);
+                      navigate("/"); // ✅ Go to Home page
                     }
                   }}
-                  className="bg-red-600 hover:bg-red-500  text-center text-white px-6 py-2 rounded-md font-semibold transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 "
+                  className="bg-red-600 hover:bg-red-500 text-center text-white px-6 py-2 rounded-md font-semibold transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
                 >
                   Logout
                 </button>
