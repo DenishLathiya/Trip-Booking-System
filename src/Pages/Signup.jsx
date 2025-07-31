@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignupForm = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,8 @@ const SignupForm = () => {
     password: "",
     confirmPassword: "",
   });
+
+  const navigate = useNavigate();
 
   const [error, setError] = useState("");
 
@@ -30,6 +32,7 @@ const SignupForm = () => {
     setError("");
     console.log("Form Submitted:", formData);
     alert("Signup successful!");
+    navigate("/");
   };
 
   return (

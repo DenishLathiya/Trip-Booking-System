@@ -27,7 +27,7 @@ const LoginModal = ({ onClose }) => {
         </div>
       )}
 
-      <div className="bg-white w-[700px] h-[490px] flex rounded-lg overflow-hidden shadow-xl relative">
+      <div className="bg-white w-[730px] h-[490px] flex rounded-lg overflow-hidden shadow-xl relative">
         <div className="w-1/2 p-6 flex flex-col justify-center">
           <h1 className="text-3xl text-black font-bold mb-3">
             Trip<span style={{ color: "#60B5FF" }}>Buddy</span>
@@ -59,7 +59,6 @@ const LoginModal = ({ onClose }) => {
                 type="text"
                 placeholder="Username"
                 id="user"
-                maxLength={10}
                 className="w-full py-2.5 pl-10 pr-4 rounded-full border border-gray-400 focus:outline-none focus:ring-2 focus:ring-[#60B5FB] text-base"
                 required
               />
@@ -73,6 +72,7 @@ const LoginModal = ({ onClose }) => {
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 id="pass"
+                minLength={8}
                 className="w-full py-2.5 pl-10 pr-10 rounded-full border border-gray-400 focus:outline-none focus:ring-2 focus:ring-[#60B5FB] text-base"
                 required
               />
