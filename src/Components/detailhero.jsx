@@ -5,13 +5,15 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const images = [
-  "https://themegavias.com/wp/travivu/wp-content/uploads/2024/11/listing-5.jpg",
-  "https://themegavias.com/wp/travivu/wp-content/uploads/2024/11/listing-3.jpg",
-  "https://themegavias.com/wp/travivu/wp-content/uploads/2024/11/listing-2.jpg",
-];
+const Detailhero = ({ images = [] }) => {
+  if (!images || images.length === 0) {
+    return (
+      <div className="w-full h-[90vh] flex items-center justify-center bg-gray-200">
+        <p className="text-gray-500">No images available</p>
+      </div>
+    );
+  }
 
-const Detailhero = () => {
   return (
     <div className="relative w-full h-[90vh] overflow-hidden">
       <Swiper
@@ -33,8 +35,7 @@ const Detailhero = () => {
             <div
               className="w-full h-[90vh] bg-cover bg-center"
               style={{ backgroundImage: `url(${img})` }}
-            >
-            </div>
+            ></div>
           </SwiperSlide>
         ))}
         <div className="swiper-button-prev text-white absolute left-3 top-1/2 -translate-y-1/2 z-10 text-xl">
