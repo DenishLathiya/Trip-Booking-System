@@ -52,11 +52,7 @@ const FeatureDestinationHost = () => {
                   </p>
                   <div className="border rounded-xl p-4 text-base text-gray-600 mb-5 space-y-3">
                     <p className="flex items-center gap-2">
-<<<<<<< HEAD
                      <Rating name="half-rating" defaultValue={destination?.rating} precision={0.5} readOnly/>
-=======
-                     <Rating name="half-rating" defaultValue={item?.rating} precision={0.5} readOnly/>
->>>>>>> 94a45f4ab6f4734508d64e20334845abf4c8f212
                     </p>
                     <p className="flex items-center gap-3">
                      👥Person {item.person}
