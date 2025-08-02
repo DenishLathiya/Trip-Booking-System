@@ -1,43 +1,44 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { userData } from "../utils/api";
 
 const SignupForm = () => {
+   const [inputIndex, setInputIndex] = useState(null);
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
+    FirstName: "",
+    LastName: "",
+    Email: "",
     password: "",
-    confirmPassword: "",
+    cpassword: "",
   });
-
   const navigate = useNavigate();
 
   const [error, setError] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match!");
-      return;
+    const focusInput = (index) => {
+        setInputIndex(index);
+    }
+     const inputchange=(e)=>{
+       setFormData(()=>({
+                    ...formData,
+                    [e.target.name]:e.target.value
+                }))
     }
 
-    setError("");
-    console.log("Form Submitted:", formData);
-    alert("Signup successful!");
-    navigate("/");
-  };
+  const adduser=(e)=>{
+          e.preventDefault()
+          userData('/signup/create',formData)
+        if(formData.password !== formData.cpassword){
+            alert("incorrect password")
+          }else{
+              alert("signup complted")
+              navigate('/')
+          }
+        }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-indigo-100 to-blue-200 px-4 relative overflow-hidden">
-      {/* Decorative background circles */}
+
       <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-200 rounded-full opacity-30 -z-10 blur-2xl -translate-x-1/3 -translate-y-1/3"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 rounded-full opacity-20 -z-10 blur-2xl translate-x-1/4 translate-y-1/4"></div>
       <div className="max-w-lg w-full bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 md:p-12 border border-indigo-100">
@@ -65,7 +66,7 @@ const SignupForm = () => {
           </span>
           <div className="flex-grow border-t border-indigo-200"></div>
         </div>
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={adduser} className="space-y-5">
           {/* First Name */}
           <div>
             <label className="block text-sm font-semibold text-gray-700 mb-1">
@@ -73,10 +74,12 @@ const SignupForm = () => {
             </label>
             <input
               type="text"
-              name="firstName"
+              name="FirstName"
               className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 bg-indigo-50/50 transition"
-              value={formData.firstName}
-              onChange={handleChange}
+              onFocus={() => focusInput(0)}
+              onBlur={() => setInputIndex(null)}
+              autoFocus
+              onChange={inputchange}
               required
               autoComplete="given-name"
             />
@@ -89,10 +92,11 @@ const SignupForm = () => {
             </label>
             <input
               type="text"
-              name="lastName"
+              name="LastName"
               className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 bg-indigo-50/50 transition"
-              value={formData.lastName}
-              onChange={handleChange}
+               onFocus={() => focusInput(1)}
+              onBlur={() => setInputIndex(null)}
+              onChange={inputchange}
               required
               autoComplete="family-name"
             />
@@ -105,10 +109,11 @@ const SignupForm = () => {
             </label>
             <input
               type="email"
-              name="email"
+              name="Email"
               className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 bg-indigo-50/50 transition"
-              value={formData.email}
-              onChange={handleChange}
+              onFocus={() => focusInput(2)}
+              onBlur={() => setInputIndex(null)}
+              onChange={inputchange}
               required
               autoComplete="email"
             />
@@ -123,8 +128,9 @@ const SignupForm = () => {
               type="password"
               name="password"
               className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 bg-indigo-50/50 transition"
-              value={formData.password}
-              onChange={handleChange}
+             onFocus={() => focusInput(3)}
+            onBlur={() => setInputIndex(null)}
+            onChange={inputchange}
               required
               autoComplete="new-password"
             />
@@ -137,10 +143,11 @@ const SignupForm = () => {
             </label>
             <input
               type="password"
-              name="confirmPassword"
+              name="cpassword"
               className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 bg-indigo-50/50 transition"
-              value={formData.confirmPassword}
-              onChange={handleChange}
+               onFocus={() => focusInput(4)}
+              onBlur={() => setInputIndex(null)}
+              onChange={inputchange}
               required
               autoComplete="new-password"
             />
