@@ -1,16 +1,17 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Rating } from "@mui/material";
 import { FaCloudUploadAlt } from "react-icons/fa";
 import bali from "../assets/bali.jpg"; 
-import { postdata } from "../utils/api";
-import { useNavigate } from "react-router-dom";
+import { editdata, fetchDataFromApi, postdata } from "../utils/api";
+import { useNavigate, useParams } from "react-router-dom";
 
-const AddTourForm = () => {
+const EdittourFrom = () => {
   const [rating, setRating] = useState(3);
   const Imges =[];
   const [productImgArr , setproductImgArr]  = useState([])
   const productImg = useRef();
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const[tour,settour] = useState([])
   const [fromFields, setFromFields] = useState({
     name: "",
       description: "",
@@ -21,60 +22,57 @@ const AddTourForm = () => {
       rating: 0,
       images: [],
   });
+ 
 
-    const inputchange=(e)=>{
+  let{id} = useParams();
+  useEffect(()=>{
+    fetchDataFromApi(`/tour/${id}`).then((res)=>{
+      settour(res)
+      console.log(res)
+      setFromFields({
+         name: res.name,
+      description:res.description ,
+      price: res.price,
+      daynight: res.daynight,
+      address: res.address,
+      person: res.person,
+      rating: res.rating,
+      images: res.images,
+      })
+      setRating(res.rating)
+      setproductImgArr(res.images)
+    })
+  },[])
+   const inputchange=(e)=>{
        setFromFields(()=>({
                     ...fromFields,
                     [e.target.name]:e.target.value
                 }))
     }
+
+   const editProduct = (e)=>{
+    e.preventDefault();
+
+    const updatefields = {
+        ...fromFields,
+       images: productImgArr 
+    };
+    editdata(`/tour/${id}`, updatefields).then((res) => {
+            console.log(res);
+            alert("Product updated successfully!");
+            navigate("/tour-list");
+        });
+  }
+
   const addproductimage = () => {
   const val = productImg.current?.value?.trim();
   if (!val) return;
-  
-  // Add the new URL to array
   setproductImgArr(prevArray => [...prevArray, val]);
-
-  // Clear only if something was actually added
   productImg.current.value = "";
 };
 
-  const addtour = (e) => {
-  e.preventDefault();
-
-  let images = [...productImgArr];
-  if (productImg.current.value.trim() !== "") {
-    images.push(productImg.current.value.trim());
-  }
-
-  const payload = {
-    ...fromFields,
-    images
-  };
-
-  postdata(`/tour/create`, payload)
-    .then(() => {
-      alert("Product is added");
-      setFromFields({
-        name: "",
-        description: "",
-        price: 0,
-        daynight: "",
-        address: "",
-        person: 0,
-        rating: 0,
-        images: [],
-      });
-      setproductImgArr([]);
-       navigate("/tour-list");
-    });
-};
-
-     
-
-
   return (
-  <form className="form" onSubmit={addtour}>
+  <form className="form" onSubmit={editProduct}>
    <div className="w-full max-w-6xl mx-auto p-6 bg-white shadow-lg rounded-xl mt-10 border border-gray-200">
 
  <h2 className="text-2xl font-semibold mb-6 text-gray-800 text-center">Upload Tour Package</h2>
@@ -88,6 +86,7 @@ const AddTourForm = () => {
     className="w-full border border-gray-300 rounded-lg px-4 py-3 lg:py-4 text-lg focus:outline-none focus:ring-2 focus:ring-[#60B5FF] focus:border-[#60B5FF] transition"
     placeholder="Enter Title"
     name="name" onChange={inputchange}
+    value={fromFields?.name}
     required
   />
 </div>
@@ -99,7 +98,7 @@ const AddTourForm = () => {
       className="w-full border border-gray-300 rounded-lg px-4 py-3 lg:py-4 text-lg focus:outline-none focus:ring-2 focus:ring-[#60B5FF] focus:border-[#60B5FF] transition"
       placeholder="Enter description..."
       name="description" onChange={inputchange}
-        required
+      value={fromFields?.description}
     />
   </div>
 
@@ -112,7 +111,7 @@ const AddTourForm = () => {
         placeholder="Enter Location"
         onChange={inputchange}
         name="address"
-          required
+           value={fromFields?.address} 
       />
     </div>
 
@@ -127,6 +126,7 @@ const AddTourForm = () => {
       onChange={inputchange}
       name="price"
         required
+         value={fromFields?.price} 
     />
   </div>
 
@@ -139,6 +139,7 @@ const AddTourForm = () => {
        onChange={inputchange}
        name="daynight"
          required
+         value={fromFields?.daynight} 
     />
   </div>
 
@@ -150,7 +151,8 @@ const AddTourForm = () => {
       placeholder="Number of People"
      onChange={inputchange}
      name="person"
-       required
+     value={fromFields?.person} 
+     required
     />
   </div>
 
@@ -180,7 +182,6 @@ const AddTourForm = () => {
       placeholder="Paste image URL"
       className="flex-1 bg-transparent outline-none px-2 text-lg"
       ref={productImg}
-      required
     />
   <button
   type="button"
@@ -194,7 +195,6 @@ const AddTourForm = () => {
   </div>
 
 <div className="p-6 bg-white shadow rounded-xl mt-6 border border-gray-200">
-  {/* Product Images Section */}
   <div className="mb-6">
     <h5 className="text-lg font-semibold text-gray-800 mb-4">PRODUCT IMAGES</h5>
     <div className="flex flex-wrap gap-4" id="imgGrid">
@@ -232,4 +232,4 @@ const AddTourForm = () => {
 };
 
 
-export default AddTourForm;
+export default EdittourFrom;

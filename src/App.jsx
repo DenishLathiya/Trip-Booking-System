@@ -14,6 +14,7 @@ import SignupForm from "./Pages/Signup";
 import TourDetalipage from "./Pages/TourDetalipage";
 import TourList from "./Pages/Tout-List";
 import AddTour from "./Pages/Add-Tour";
+import Edittour from "./Pages/edit-Tour";
 
 const router = createBrowserRouter([
   {
@@ -93,7 +94,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/Details",
+    path: "/Details/:id",
     element: (
       <>
         <Navbar />
@@ -118,6 +119,16 @@ const router = createBrowserRouter([
       <>
         <Navbar />
         <AddTour />
+        <Footer />
+      </>
+    ),
+  },
+  {
+    path: "/edit-tour/:id",
+    element: (
+      <>
+        <Navbar />
+        <Edittour />
         <Footer />
       </>
     ),
