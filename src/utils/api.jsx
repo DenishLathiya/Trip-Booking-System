@@ -54,9 +54,10 @@ export const userData = async (url, fromdata) => {
 export const loginData = async (url, formData) => {
   try {
     const { data } = await axios.post("http://localhost:4000" + url, formData);
-    return data;
+    return data; // this is whatever your backend sends
   } catch (error) {
     console.error("POST Error:", error.response?.data || error.message);
     throw error;
   }
 };
+
