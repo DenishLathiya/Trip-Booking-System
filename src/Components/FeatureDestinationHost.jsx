@@ -53,19 +53,6 @@ const FeatureDestinationHost = () => {
                     <p className="flex items-center gap-2">
                       <Rating
                         name="half-rating"
-                        defaultValue={destination?.rating}
-                        precision={0.5}
-                        readOnly
-                      />
-
-                      <Rating
-                        name="half-rating"
-                        defaultValue={item?.rating}
-                        precision={0.5}
-                        readOnly
-                      />
-                      <Rating
-                        name="half-rating"
                         defaultValue={item?.rating}
                         precision={0.5}
                         readOnly
