@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { Link } from "react-router-dom";
 import "../Components/Css/reactSlick.css";
 import TopBanner from "./TopBanner";
-import { deleteData, fetchDataFromApi } from "../utils/api";
+import { deleteBooking, deleteData, fetchDataFromApi } from "../utils/api";
 
 const FeatureDestinationHost = () => {
 
@@ -22,6 +22,9 @@ const FeatureDestinationHost = () => {
       settour(res)
     });
   });
+  deleteBooking(`/Book/${_id}`).then(()=>{
+    console.log("booking to delete the this is tour!")
+  })
   };
 
   return (

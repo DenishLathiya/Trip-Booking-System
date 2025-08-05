@@ -41,6 +41,11 @@ export const Bookingdata = async (url, formData) => {
   }
 }
 
+export const deleteBooking = async (url) => {
+  const {data} = await axios.delete(`http://localhost:4000${url}`);
+  return data
+}
+
 export const userData = async (url, fromdata) => {
   try {
     const { data } = await axios.post("http://localhost:4000" + url, fromdata);
