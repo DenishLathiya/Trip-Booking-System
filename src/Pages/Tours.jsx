@@ -2,28 +2,26 @@ import React, { useEffect, useState } from "react";
 import TopBanner from "../Components/TopBanner";
 import { Link } from "react-router-dom";
 import { Bookingdata, fetchDataFromApi } from "../utils/api";
-import Rating from '@mui/material/Rating';
+import Rating from "@mui/material/Rating";
 
 const Tours = () => {
+  const [tour, settour] = useState([]);
+  useEffect(() => {
+    fetchDataFromApi(`/tour`).then((res) => {
+      settour(res);
+    });
+  });
 
-   const[tour,settour] = useState([])
-    useEffect(()=>{
-      fetchDataFromApi(`/tour`).then((res)=>{
-        settour(res)
-      })
-    })
-
-    const handleBooking = async (tourId) => {
-  try {
-    const res = await Bookingdata("/Book/add", { tourId });
-    alert("Booking successful!");
-    console.log("Booking saved:", res);
-  } catch (err) {
-    console.error("Booking error:", err);
-    alert("Failed to book this tour.");
-  }
-};
-
+  const handleBooking = async (tourId) => {
+    try {
+      const res = await Bookingdata("/Book/add", { tourId });
+      alert("Booking successful!");
+      console.log("Booking saved:", res);
+    } catch (err) {
+      console.error("Booking error:", err);
+      alert("Failed to book this tour.");
+    }
+  };
 
   return (
     <>
@@ -34,9 +32,9 @@ const Tours = () => {
         </h1>
         <hr className="text-red-500 w-[200px] bg-[#60B5FF] mx-auto h-1 mb-10" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
-         {tour.map((item,index) => (
+          {tour.map((item, index) => (
             <div key={item.id} className="px-3">
-              <div className="w-[420px] h-[650px] bg-white rounded-2xl shadow-xl overflow-hidden scale-100 transition-all duration-300">
+              <div className="w-[420px] h-[min-650px] bg-white rounded-2xl shadow-xl overflow-hidden scale-100 transition-all duration-300">
                 <div className="relative">
                   <img
                     src={item?.images?.[0]}
@@ -53,29 +51,35 @@ const Tours = () => {
                   </p>
                   <div className="border rounded-xl p-4 text-base text-gray-600 mb-5 space-y-3">
                     <p className="flex items-center gap-2">
-                     <Rating name="half-rating" defaultValue={item?.rating} precision={0.5} readOnly/>
+                      <Rating
+                        name="half-rating"
+                        defaultValue={item?.rating}
+                        precision={0.5}
+                        readOnly
+                      />
                     </p>
                     <p className="flex items-center gap-3">
-                     👥 Person {item.person}
+                      👥 Person {item.person}
                     </p>
-                    <p className="flex items-center gap-2">
-                      📍 {item.address}
-                    </p>
+                    <p className="flex items-center gap-2">📍 {item.address}</p>
                     <div className="flex justify-between items-center pt-2">
                       <p className="text-2xl font-bold text-gray-900">
-                         Rs.{item.price}
+                        Rs.{item.price}
                       </p>
                     </div>
                   </div>
                   <div className="flex gap-5">
-                    <button onClick={() => handleBooking(item._id)} className="px-5 py-3 bg-[#60B5FF] rounded-lg text-white text-base font-semibold bg-gradient-to-r from-bg-[#60B5FF] to-bg-[#60B5FF] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                    <button
+                      onClick={() => handleBooking(item._id)}
+                      className="px-5 py-3 bg-[#60B5FF] rounded-lg text-white text-base font-semibold bg-gradient-to-r from-bg-[#60B5FF] to-bg-[#60B5FF] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110"
+                    >
                       Book now
                     </button>
-                     <Link to={`/details/${item._id}`}>
-                    <button className=/*"px-5 py-3 bg-[#121f4d]  rounded-lg text-white text-base font-semibold bg-bg-[#121f4d] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 ..."*/ "px-5 py-3 rounded-lg text-white text-base font-semibold bg-gradient-to-r from-[#121f4d] to-[#1a2a6c] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:from-indigo-5g00 hover:to-indigo-800">
-                      Learn More
-                    </button>
-                      </Link>
+                    <Link to={`/details/${item._id}`}>
+                      <button className=/*"px-5 py-3 bg-[#121f4d]  rounded-lg text-white text-base font-semibold bg-bg-[#121f4d] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 ..."*/ "px-5 py-3 rounded-lg text-white text-base font-semibold bg-gradient-to-r from-[#121f4d] to-[#1a2a6c] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:from-indigo-5g00 hover:to-indigo-800">
+                        Learn More
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
