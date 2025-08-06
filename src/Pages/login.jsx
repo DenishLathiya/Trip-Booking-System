@@ -167,28 +167,29 @@ const LoginModal = ({ onClose }) => {
       } else {
         setError("Invalid Admin Email or Password");
       }
-    } 
-    else {
-
+    } else {
       try {
-      const response = await loginData("/signup/login", { Email:email, password});
-      localStorage.setItem("loginType", "user");
-      setShowToast(true);
-          setTimeout(() => {
-            setShowToast(false);
-            onClose();
-          }, 2000);
-    } catch (err) {
-      setError("Login Failed")
-    }
+        const response = await loginData("/signup/login", {
+          Email: email,
+          password,
+        });
+        localStorage.setItem("loginType", "user");
+        setShowToast(true);
+        setTimeout(() => {
+          setShowToast(false);
+          onClose();
+        }, 2000);
+      } catch (err) {
+        setError("Login Failed");
+      }
     }
   };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       {showToast && (
-        <div className="fixed top-5 right-5 bg-[#008000] text-white px-5 py-3 rounded shadow-lg z-50 animate-slide-in text-xl">
-          ✅ Login Successfully
+        <div className="fixed top-5 right-5 bg-[#008000] text-white px-5 py-3 rounded shadow-lg z-50 text-xl animate-bounce">
+          ✅ Login Successfully!
         </div>
       )}
 
@@ -299,4 +300,3 @@ const LoginModal = ({ onClose }) => {
 };
 
 export default LoginModal;
-
