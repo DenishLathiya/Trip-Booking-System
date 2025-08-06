@@ -34,7 +34,7 @@ const FeatureDestinationHost = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
           {tour.map((item, index) => (
             <div key={item._id} className="px-3">
-              <div className="w-[420px] bg-white rounded-2xl shadow-xl overflow-hidden scale-100 transition-all duration-300">
+              <div className="w-[420px] h-[min-650px] bg-white rounded-2xl shadow-xl overflow-hidden scale-100 transition-all duration-300">
                 <div className="relative">
                   <img
                     src={item?.images?.[0]}
@@ -70,12 +70,12 @@ const FeatureDestinationHost = () => {
                   </div>
                   <div className="flex gap-5">
                     <Link to={`/edit-tour/${item._id}`}>
-                      <button className="px-5 py-3 bg-[#47bf4d] rounded-lg text-white text-base font-semibold bg-gradient-to-r from-bg-[#60B5FF] to-bg-[#60B5FF] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                      <button className="px-5 py-3 bg-[#249429] rounded-lg text-white text-base font-semibold bg-gradient-to-r from-bg-[#60B5FF] to-bg-[#60B5FF] transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
                         Edit
                       </button>
                     </Link>
                     <button
-                      className="px-5 py-3 rounded-lg text-white text-base font-semibold bg-gradient-to-r bg-[#f23866]  transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:from-indigo-5g00 hover:to-indigo-800"
+                      className="px-5 py-3 rounded-lg text-white text-base font-semibold bg-gradient-to-r bg-red-600  transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:from-indigo-5g00 hover:to-indigo-800"
                       onClick={() => Deletetour(item._id)}
                     >
                       Delete
