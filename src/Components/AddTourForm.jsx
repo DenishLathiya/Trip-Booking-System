@@ -55,9 +55,14 @@ const AddTourForm = () => {
 
     postdata(`/tour/create`, payload).then(() => {
       setShowToast(true);
+
+      // Show toast for 2 seconds before navigating
       setTimeout(() => {
         setShowToast(false);
+        navigate("/tour-list");
       }, 2000);
+
+      // Reset form fields
       setFromFields({
         name: "",
         description: "",
@@ -69,10 +74,6 @@ const AddTourForm = () => {
         images: [],
       });
       setproductImgArr([]);
-      setTimeout(() => {
-        setShowToast(false);
-        navigate("/tour-list");
-      }, 1000);
     });
   };
 
@@ -195,27 +196,29 @@ const AddTourForm = () => {
               </div>
             </div>
 
-   <div>
-  <label className="block text-lg font-medium text-gray-700 mb-2">Tour Image URL</label>
-  
-  <div className="flex items-center bg-gray-50 border border-gray-300 rounded-lg px-2 py-3 lg:py-3">
-    <input
-      type="text"
-      placeholder="Paste image URL"
-      className="flex-1 bg-transparent outline-none px-2 text-lg"
-      ref={productImg}
-      required
-    />
-  <button
-  type="button"
-  onClick={addproductimage}
-  className="bg-[#60B5FF] hover:bg-[#3498DB] text-white text-sm font-semibold w-[75px] px-4 py-3 rounded-md transition"
->
-  ADD
-</button>
-  </div>
-</div>  
-  </div>
+            <div>
+              <label className="block text-lg font-medium text-gray-700 mb-2">
+                Tour Image URL
+              </label>
+
+              <div className="flex items-center bg-gray-50 border border-gray-300 rounded-lg px-2 py-3 lg:py-3">
+                <input
+                  type="text"
+                  placeholder="Paste image URL"
+                  className="flex-1 bg-transparent outline-none px-2 text-lg"
+                  ref={productImg}
+                  required
+                />
+                <button
+                  type="button"
+                  onClick={addproductimage}
+                  className="bg-[#60B5FF] hover:bg-[#3498DB] text-white text-sm font-semibold w-[75px] px-4 py-3 rounded-md transition"
+                >
+                  ADD
+                </button>
+              </div>
+            </div>
+          </div>
 
           <div className="p-6 bg-white shadow rounded-xl mt-6 border border-gray-200">
             {/* Product Images Section */}
