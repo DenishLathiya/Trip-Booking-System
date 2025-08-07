@@ -60,7 +60,7 @@ const AddTourForm = () => {
       setTimeout(() => {
         setShowToast(false);
         navigate("/tour-list");
-      }, 2000);
+      }, 1000);
 
       // Reset form fields
       setFromFields({
