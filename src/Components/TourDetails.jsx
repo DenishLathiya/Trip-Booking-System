@@ -140,7 +140,7 @@ import {
   FaTags
 } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
-import { fetchDataFromApi } from "../utils/api";
+import { fetchDataFromApi } from "../utils/api";  
 
 const TourDetails = () => {
    const {id} = useParams();
