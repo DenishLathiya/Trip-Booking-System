@@ -207,7 +207,6 @@ const AddTourForm = () => {
                   placeholder="Paste image URL"
                   className="flex-1 bg-transparent outline-none px-2 text-lg"
                   ref={productImg}
-                  required
                 />
                 <button
                   type="button"
