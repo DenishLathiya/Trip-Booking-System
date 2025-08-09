@@ -24,7 +24,7 @@ const Booking = () => {
         <hr className="text-red-500 w-[200px] bg-[#60B5FF] mx-auto h-1 mb-10" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center">
           {bookdata
-            //.filter((item) => item.tourId && item.tourId.images?.[0])
+            .filter((item) => item.tourId && item.tourId.images?.[0])
             .map((item, index) => (
               <div key={item.id} className="px-3">
                 <div className="w-[420px] h-[700px] bg-white rounded-2xl shadow-xl overflow-hidden scale-100 transition-all duration-300 flex flex-col">

@@ -196,7 +196,7 @@ const LoginModal = ({ onClose }) => {
       <div className="bg-white w-[730px] h-[490px] flex rounded-lg overflow-hidden shadow-xl relative">
         <div className="w-1/2 p-6 flex flex-col justify-center">
           <h1 className="text-3xl text-black font-bold mb-3">
-            Trip<span style={{ color: "#60B5FF" }}>Buddy</span>
+            Global<span style={{ color: "#60B5FF" }}>Trip</span>
           </h1>
           <p className="text-2xl text-gray-800 mb-6 font-semibold">
             Sign into your account
