@@ -82,7 +82,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="mailto:info@tourbuddy.com">
-                  Email: info@tripbuddy.com
+                  Email: info@globaltrip.com
                 </a>
               </li>
             </ul>
