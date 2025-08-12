@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { userData } from "../utils/api";
 
 const SignupForm = () => {
-   const [inputIndex, setInputIndex] = useState(null);
+  const [inputIndex, setInputIndex] = useState(null);
   const [formData, setFormData] = useState({
     FirstName: "",
     LastName: "",
@@ -15,30 +15,29 @@ const SignupForm = () => {
 
   const [error, setError] = useState("");
 
-    const focusInput = (index) => {
-        setInputIndex(index);
-    }
-     const inputchange=(e)=>{
-       setFormData(()=>({
-                    ...formData,
-                    [e.target.name]:e.target.value
-                }))
-    }
+  const focusInput = (index) => {
+    setInputIndex(index);
+  };
+  const inputchange = (e) => {
+    setFormData(() => ({
+      ...formData,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
-  const adduser=(e)=>{
-          e.preventDefault()
-          userData('/signup/create',formData)
-        if(formData.password !== formData.cpassword){
-            alert("incorrect password")
-          }else{
-              alert("signup complted")
-              navigate('/')
-          }
-        }
+  const adduser = (e) => {
+    e.preventDefault();
+    userData("/signup/create", formData);
+    if (formData.password !== formData.cpassword) {
+      alert("incorrect password");
+    } else {
+      alert("signup complted");
+      navigate("/");
+    }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 via-indigo-100 to-blue-200 px-4 relative overflow-hidden">
-
       <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-200 rounded-full opacity-30 -z-10 blur-2xl -translate-x-1/3 -translate-y-1/3"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-200 rounded-full opacity-20 -z-10 blur-2xl translate-x-1/4 translate-y-1/4"></div>
       <div className="max-w-lg w-full bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-8 md:p-12 border border-indigo-100">
@@ -46,7 +45,7 @@ const SignupForm = () => {
         {
           <div className="flex justify-center mb-6">
             <h1 className="text-2xl text-black font-bold">
-              Trip<span style={{ color: "#60B5FF" }}>Buddy</span>
+              Global<span style={{ color: "#60B5FF" }}>Trip</span>
             </h1>
           </div>
         }
@@ -57,7 +56,7 @@ const SignupForm = () => {
           Create your account
         </p>
         <p className="text-center text-gray-500 mb-6 text-sm">
-          Join TripBuddy and start your adventure!
+          Join GlobalTrip and start your adventure!
         </p>
         <div className="flex items-center mb-6">
           <div className="flex-grow border-t border-indigo-200"></div>
@@ -94,7 +93,7 @@ const SignupForm = () => {
               type="text"
               name="LastName"
               className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 bg-indigo-50/50 transition"
-               onFocus={() => focusInput(1)}
+              onFocus={() => focusInput(1)}
               onBlur={() => setInputIndex(null)}
               onChange={inputchange}
               required
@@ -128,9 +127,9 @@ const SignupForm = () => {
               type="password"
               name="password"
               className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 bg-indigo-50/50 transition"
-             onFocus={() => focusInput(3)}
-            onBlur={() => setInputIndex(null)}
-            onChange={inputchange}
+              onFocus={() => focusInput(3)}
+              onBlur={() => setInputIndex(null)}
+              onChange={inputchange}
               required
               autoComplete="new-password"
             />
@@ -145,7 +144,7 @@ const SignupForm = () => {
               type="password"
               name="cpassword"
               className="w-full px-4 py-2 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 bg-indigo-50/50 transition"
-               onFocus={() => focusInput(4)}
+              onFocus={() => focusInput(4)}
               onBlur={() => setInputIndex(null)}
               onChange={inputchange}
               required

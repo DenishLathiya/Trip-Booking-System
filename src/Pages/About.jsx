@@ -18,18 +18,18 @@ const About = () => {
                 className="rounded-lg"
               />
               <div className="absolute bottom-[45%] right-0 p-4 bg-[#60B5FF] text-white font-bold md:text-4xl rounded-lg">
-                HOW WE ARE BEST <br /> FOR TRAVEL!
+                HOW WE ARE BEST <br /> FOR TOUR!
               </div>
             </div>
             <h1 className="md:text-4xl font-bold mt-6 mb-4 text-3xl ml-10">
               Discover the World with Us
             </h1>
             <p className="text-black ml-10">
-              Welcome to TripBuddy — your trusted travel partner for
+              Welcome to GlobalTrip — your trusted travel partner for
               unforgettable adventures around the globe. We are passionate about
               helping travelers explore the world with ease, confidence, and
               excitement. Whether you’re planning a weekend getaway, a cultural
-              expedition, or a luxurious vacation, TripBuddy is here to make
+              expedition, or a luxurious vacation, GlobalTrip is here to make
               your journey seamless and memorable.
             </p>
 
@@ -37,12 +37,12 @@ const About = () => {
               🌍 Who We Are
             </h1>
             <p className="text-black ml-10">
-              TripBuddy is a team of travel enthusiasts, planners, and explorers
-              with one mission: to simplify the way people experience the world.
-              With years of experience in the travel and tourism industry, we’ve
-              curated a platform that brings together the best destinations,
-              affordable packages, and real-time booking convenience — all in
-              one place.
+              GlobalTrip is a team of travel enthusiasts, planners, and
+              explorers with one mission: to simplify the way people experience
+              the world. With years of experience in the travel and tourism
+              industry, we’ve curated a platform that brings together the best
+              destinations, affordable packages, and real-time booking
+              convenience — all in one place.
             </p>
 
             <h1 className="md:text-4xl font-bold mt-6 mb-4 text-3xl ml-10">
@@ -57,7 +57,7 @@ const About = () => {
               📱 User-friendly app and website for hassle-free planning
             </p>
             <h1 className="md:text-4xl font-bold mt-6 mb-4 text-3xl ml-10">
-              🌟 Why Choose TripBuddy?
+              🌟 Why Choose GlobalTrip?
             </h1>
             <p className="text-black ml-10">
               ✅ Trusted by thousands of travelers
@@ -72,7 +72,7 @@ const About = () => {
               💬 Our Promise
             </h1>
             <p className="text-black ml-10">
-              At TripBuddy, we believe that travel should be joyful — not
+              At GlobalTrip, we believe that travel should be joyful — not
               stressful. From your first click to your final destination, we're
               with you every step of the way. Let us take care of the details —
               you just enjoy the journey.

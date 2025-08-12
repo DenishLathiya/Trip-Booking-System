@@ -50,7 +50,8 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto py-2 px-5 flex bg-transparent justify-between items-center">
           <Link to="/">
             <h1 className="text-2xl text-white font-bold ">
-              Trip<span style={{ color: "#60B5FF" }}>Buddy</span>
+              Global
+              <span style={{ color: "#60B5FF" }}>Trip</span>
             </h1>
           </Link>
 
