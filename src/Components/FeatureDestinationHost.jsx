@@ -21,10 +21,12 @@ const FeatureDestinationHost = () => {
         settour(res);
       });
     });
-    deleteBooking(`/Book/${_id}`).then(() => {
-      console.log("booking to delete the this is tour!");
-    });
   };
+const DeleteBooking = (tourId) => {
+  deleteBooking(`/Book/tour/${tourId}`).then(() => {
+    console.log("All bookings for this tour deleted!");
+  });
+};
 
   return (
     <>
@@ -79,7 +81,10 @@ const FeatureDestinationHost = () => {
                     </Link>
                     <button
                       className="px-5 py-3 rounded-lg text-white text-base font-semibold bg-gradient-to-r bg-red-600  transition delay-110 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:from-indigo-5g00 hover:to-indigo-800"
-                      onClick={() => Deletetour(item._id)}
+                      onClick={() =>{
+                                      Deletetour(item._id);
+                                      DeleteBooking(item._id);
+                      }}
                     >
                       Delete
                     </button>
