@@ -135,7 +135,13 @@ const Navbar = () => {
           </div>
         </div>
 
-        <ResponsiveMenu showMenu={showMenu} setShowMenu={setShowMenu} />
+        <ResponsiveMenu
+          showMenu={showMenu}
+          setShowMenu={setShowMenu}
+          loginType={loginType}
+          setLoginType={setLoginType}
+          setShowLoginModal={setShowLoginModal}
+        />
 
         {showLoginModal && (
           <LoginModal
