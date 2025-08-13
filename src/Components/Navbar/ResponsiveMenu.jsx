@@ -119,9 +119,6 @@ const ResponsiveMenu = ({
           )}
         </ul>
       </nav>
-
-      {/* Footer */}
-      <div className="text-center text-sm">Made with ❤️ by Rohit</div>
     </div>
   );
 };
