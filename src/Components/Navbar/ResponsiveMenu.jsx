@@ -56,24 +56,6 @@ const ResponsiveMenu = ({
           </Link>
         </>
       );
-    } else {
-      // Links for visitors (not logged in)
-      return (
-        <>
-          <Link to="/">
-            <li onClick={() => setShowMenu(false)}>Home</li>
-          </Link>
-          <Link to="/about">
-            <li onClick={() => setShowMenu(false)}>About Us</li>
-          </Link>
-          <Link to="/tours">
-            <li onClick={() => setShowMenu(false)}>Tours</li>
-          </Link>
-          <Link to="/contact">
-            <li onClick={() => setShowMenu(false)}>Contact Us</li>
-          </Link>
-        </>
-      );
     }
   };
 
