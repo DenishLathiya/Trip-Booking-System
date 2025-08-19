@@ -57,7 +57,7 @@ const Navbar = () => {
 
           <div className="flex items-center gap-5">
             <nav className="hidden md:flex gap-7 ">
-              <ul className="flex items-center font-bold text-white text-xl gap-7 cursor-pointer">
+              <ul className="flex items-center font-bold text-white text-xl gap-10 cursor-pointer">
                 {loginType === "user" && (
                   <>
                     <li className={getLinkClass("/")}>
