@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
-import { loginData } from "../utils/api"; // <-- make sure path is correct
+import { loginData } from "../utils/api";
 
 const LoginModal = ({ onClose }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -13,10 +13,9 @@ const LoginModal = ({ onClose }) => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError(""); // reset old error
+    setError("");
 
     if (loginType === "admin") {
-      // ✅ Hardcoded admin check
       const adminEmail = "admin@example.com";
       const adminPassword = "Admin@123";
 
