@@ -9,13 +9,12 @@ const Contact = () => {
     setShowToast(true);
     e.target.reset();
 
-    // Hide popup after 4 seconds
     setTimeout(() => setShowToast(false), 4000);
   };
 
   return (
     <div className="relative">
-      {/* Toast popup */}
+     
       {showToast && (
         <div className="fixed top-5 right-5 bg-[#008000] text-white px-6 py-3 rounded shadow-lg z-50 animate-slide-in">
           ✅ Thank you! We’ll get back to you shortly.
@@ -23,7 +22,7 @@ const Contact = () => {
       )}
 
       <div className="flex flex-col max-w-7xl mx-auto md:flex-row lg:h-screen items-center">
-        {/* image section */}
+
         <div className="flex-1 bg-gray-100 flex justify-center items-center">
           <img
             src={contactImg}
@@ -32,7 +31,6 @@ const Contact = () => {
           />
         </div>
 
-        {/* contact form section */}
         <div className="flex-1 bg-white w-full flex flex-col justify-center px-8 py-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-6">
             Get in Touch
