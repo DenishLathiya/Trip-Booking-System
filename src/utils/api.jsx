@@ -10,15 +10,15 @@ export const fetchDataFromApi = async (url) => {
   }
 };
 
-export const postdata = async (url,fromdata) =>{
-  try{
-    const {data} = await axios.post("http://localhost:4000" + url ,fromdata);
+export const postdata = async (url, fromdata) => {
+  try {
+    const { data } = await axios.post("http://localhost:4000" + url, fromdata);
     return data;
-  }catch(error){
-     console.error("POST Error:", error.response?.data || error.message);
-    return error
+  } catch (error) {
+    console.error("POST Error:", error.response?.data || error.message);
+    return error;
   }
-}
+};
 
 export const deleteData = async (url) => {
   const { data } = await axios.delete(`http://localhost:4000${url}`);
@@ -30,7 +30,6 @@ export const editdata = async (url, updatedata) => {
   return res;
 };
 
-
 export const Bookingdata = async (url, formData) => {
   try {
     const { data } = await axios.post("http://localhost:4000" + url, formData);
@@ -39,12 +38,12 @@ export const Bookingdata = async (url, formData) => {
     console.error("POST Error:", error.response?.data || error.message);
     throw error;
   }
-}
+};
 
 export const deleteBooking = async (url) => {
-  const {data} = await axios.delete(`http://localhost:4000${url}`);
-  return data
-}
+  const { data } = await axios.delete(`http://localhost:4000${url}`);
+  return data;
+};
 
 export const userData = async (url, fromdata) => {
   try {
@@ -65,4 +64,3 @@ export const loginData = async (url, formData) => {
     throw error;
   }
 };
-
